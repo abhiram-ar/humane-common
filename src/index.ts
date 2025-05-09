@@ -1,1 +1,1 @@
-export * from "./events/eventSchema"
+export * from "./events/index"
