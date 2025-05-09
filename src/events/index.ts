@@ -1,18 +1,17 @@
+export * from './eventSchema';
+export * from './user-service.events';
+export * from './createEvent';
+
 import {
    UserEventsTypes,
    UserPasswordRecoveryRequestEvent,
    UserSignupEvent,
 } from './user-service.events';
 
-
-export * from './eventSchema';
-export * from './user-service.events';
-
-export const AllEventsTypes = {
+export const appEventsTypes = {
    ...UserEventsTypes,
 } as const;
-export type AllEventsTypes = (typeof AllEventsTypes)[keyof typeof AllEventsTypes];
-
+export type AppEventsTypes = (typeof appEventsTypes)[keyof typeof appEventsTypes];
 
 export enum EventSource {
    USER_SERVICE = 'user-service',
