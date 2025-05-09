@@ -8,10 +8,10 @@ import {
    UserSignupEvent,
 } from './user-service.events';
 
-export const appEventsTypes = {
+export const AppEventsTypes = {
    ...UserEventsTypes,
 } as const;
-export type AppEventsTypes = (typeof appEventsTypes)[keyof typeof appEventsTypes];
+export type AppEventsTypes = (typeof AppEventsTypes)[keyof typeof AppEventsTypes];
 
 export enum EventSource {
    USER_SERVICE = 'user-service',
