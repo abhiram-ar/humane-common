@@ -1,1 +1,1 @@
-console.log("hello booi")
+export * from "./events/eventSchema"
