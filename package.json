@@ -1,0 +1,25 @@
+{
+   "name": "humane-common",
+   "version": "1.0.0",
+   "description": "init",
+   "main": "index.js",
+   "scripts": {
+      "clean": "del ./build/*",
+      "build": "npm run clean && tsc",
+      "pub": "git add . && git commit -m \"Updates\" && npm version patch && npm run build && npm pub"
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC",
+   "type": "commonjs",
+   "dependencies": {
+      "express": "^5.1.0",
+      "jsonwebtoken": "^9.0.2"
+   },
+   "devDependencies": {
+      "@types/express": "^5.0.1",
+      "@types/jsonwebtoken": "^9.0.9",
+      "del-cli": "^6.0.0",
+      "typescript": "^5.8.3"
+   }
+}
