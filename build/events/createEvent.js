@@ -2,14 +2,16 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createEvent = void 0;
 const node_crypto_1 = require("node:crypto");
-const createEvent = (eventType, eventSource, eventPayload) => {
+const AppEventConfigurationMap_1 = require("./AppEventConfigurationMap");
+const createEvent = (eventType, payload) => {
+    const source = AppEventConfigurationMap_1.appEventConfigurations[eventType].source;
     return {
-        eventType: eventType,
+        eventType,
         version: 1,
         eventId: (0, node_crypto_1.randomUUID)(),
-        source: eventSource,
+        source,
         timestamp: new Date().toISOString(),
-        payload: eventPayload,
+        payload,
     };
 };
 exports.createEvent = createEvent;

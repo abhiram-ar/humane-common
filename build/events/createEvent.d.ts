@@ -1,2 +1,6 @@
-import { RootAppEvent } from './eventSchema';
-export declare const createEvent: <T, S, P>(eventType: T, eventSource: S, eventPayload: P) => RootAppEvent<T, S, P>;
+import { AppEvent, AppEventsTypes } from '.';
+export declare const createEvent: <T extends AppEventsTypes>(eventType: T, payload: Extract<AppEvent, {
+    eventType: T;
+}>["payload"]) => Extract<AppEvent, {
+    eventType: T;
+}>;

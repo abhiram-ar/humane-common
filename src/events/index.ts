@@ -13,9 +13,10 @@ export const AppEventsTypes = {
 } as const;
 export type AppEventsTypes = (typeof AppEventsTypes)[keyof typeof AppEventsTypes];
 
-export enum EventSource {
+export enum AppEventSource {
    USER_SERVICE = 'user-service',
    NOTIFICATION_SERVICE = 'notification-service',
 }
 
 export type AppEvent = UserPasswordRecoveryRequestEvent | UserSignupEvent;
+

@@ -7,7 +7,7 @@ export declare const AppEventsTypes: {
     readonly USER_SINGUP: UserEventsTypes.USER_SINGUP;
 };
 export type AppEventsTypes = (typeof AppEventsTypes)[keyof typeof AppEventsTypes];
-export declare enum EventSource {
+export declare enum AppEventSource {
     USER_SERVICE = "user-service",
     NOTIFICATION_SERVICE = "notification-service"
 }

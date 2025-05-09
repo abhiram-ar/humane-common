@@ -14,14 +14,14 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EventSource = exports.AppEventsTypes = void 0;
+exports.AppEventSource = exports.AppEventsTypes = void 0;
 __exportStar(require("./eventSchema"), exports);
 __exportStar(require("./user-service.events"), exports);
 __exportStar(require("./createEvent"), exports);
 const user_service_events_1 = require("./user-service.events");
 exports.AppEventsTypes = Object.assign({}, user_service_events_1.UserEventsTypes);
-var EventSource;
-(function (EventSource) {
-    EventSource["USER_SERVICE"] = "user-service";
-    EventSource["NOTIFICATION_SERVICE"] = "notification-service";
-})(EventSource || (exports.EventSource = EventSource = {}));
+var AppEventSource;
+(function (AppEventSource) {
+    AppEventSource["USER_SERVICE"] = "user-service";
+    AppEventSource["NOTIFICATION_SERVICE"] = "notification-service";
+})(AppEventSource || (exports.AppEventSource = AppEventSource = {}));
