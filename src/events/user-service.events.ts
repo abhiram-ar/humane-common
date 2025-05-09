@@ -11,7 +11,7 @@ export type UserPasswordRecoveryEventPaylaod = {
 };
 export type UserPasswordRecoveryRequestEvent = RootAppEvent<
    UserEventsTypes.USER_PASSWORD_RECOVERY_REQUESTED,
-   '',
+   EventSource.USER_SERVICE,
    UserPasswordRecoveryEventPaylaod
 >;
 

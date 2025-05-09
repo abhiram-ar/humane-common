@@ -10,7 +10,7 @@ export type UserPasswordRecoveryEventPaylaod = {
         token: string;
     };
 };
-export type UserPasswordRecoveryRequestEvent = RootAppEvent<UserEventsTypes.USER_PASSWORD_RECOVERY_REQUESTED, '', UserPasswordRecoveryEventPaylaod>;
+export type UserPasswordRecoveryRequestEvent = RootAppEvent<UserEventsTypes.USER_PASSWORD_RECOVERY_REQUESTED, EventSource.USER_SERVICE, UserPasswordRecoveryEventPaylaod>;
 export type UserSignupEventPayload = {
     email: string;
     data: {
