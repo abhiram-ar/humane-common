@@ -1,5 +1,4 @@
-
-export type RootAppEvent<eventType, eventSource, payloadType = unknown> = {
+export type RootAppEvent<eventType, eventSource, payloadType> = {
    eventType: eventType;
    version: number;
    eventId: string;
