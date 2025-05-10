@@ -1,8 +1,8 @@
-export type RootAppEvent<eventType, eventSource, payloadType> = {
+export type RootAppEvent<eventType, payloadType> = {
     eventType: eventType;
     version: number;
     eventId: string;
-    source: eventSource;
+    source: string;
     timestamp: string;
     traceId?: string;
     payload: payloadType;

@@ -1,4 +1,3 @@
-import { AppEventSource } from './AppEventSource';
 import { RootAppEvent } from './eventSchema';
 export declare enum UserEventsTypes {
     USER_PASSWORD_RECOVERY_REQUESTED = "user.password.recovery-requested",
@@ -10,7 +9,7 @@ export type UserPasswordRecoveryEventPaylaod = {
         token: string;
     };
 };
-export type UserPasswordRecoveryRequestEvent = RootAppEvent<UserEventsTypes.USER_PASSWORD_RECOVERY_REQUESTED, typeof AppEventSource.USER_SERVICE, UserPasswordRecoveryEventPaylaod>;
+export type UserPasswordRecoveryRequestEvent = RootAppEvent<UserEventsTypes.USER_PASSWORD_RECOVERY_REQUESTED, UserPasswordRecoveryEventPaylaod>;
 export type UserSignupEventPayload = {
     email: string;
     data: {
@@ -18,4 +17,4 @@ export type UserSignupEventPayload = {
         firstName: string;
     };
 };
-export type UserSignupEvent = RootAppEvent<UserEventsTypes.USER_SINGUP, typeof AppEventSource.USER_SERVICE, UserSignupEventPayload>;
+export type UserSignupEvent = RootAppEvent<UserEventsTypes.USER_SINGUP, UserSignupEventPayload>;
