@@ -18,5 +18,6 @@ export enum AppEventSource {
    NOTIFICATION_SERVICE = 'notification-service',
 }
 
+// union of all appevents
 export type AppEvent = UserPasswordRecoveryRequestEvent | UserSignupEvent;
 
