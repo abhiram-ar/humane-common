@@ -18,6 +18,7 @@ exports.AppEventSource = exports.AppEventsTypes = void 0;
 __exportStar(require("./eventSchema"), exports);
 __exportStar(require("./user-service.events"), exports);
 __exportStar(require("./createEvent"), exports);
+__exportStar(require("./kafkaTopics"), exports);
 const user_service_events_1 = require("./user-service.events");
 exports.AppEventsTypes = Object.assign({}, user_service_events_1.UserEventsTypes);
 var AppEventSource;

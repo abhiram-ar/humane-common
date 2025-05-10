@@ -1,7 +1,7 @@
 export * from './eventSchema';
 export * from './user-service.events';
 export * from './createEvent';
-
+export * from "./kafkaTopics"
 import {
    UserEventsTypes,
    UserPasswordRecoveryRequestEvent,

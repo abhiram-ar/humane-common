@@ -1,6 +1,7 @@
 export * from './eventSchema';
 export * from './user-service.events';
 export * from './createEvent';
+export * from "./kafkaTopics";
 import { UserEventsTypes, UserPasswordRecoveryRequestEvent, UserSignupEvent } from './user-service.events';
 export declare const AppEventsTypes: {
     readonly USER_PASSWORD_RECOVERY_REQUESTED: UserEventsTypes.USER_PASSWORD_RECOVERY_REQUESTED;
