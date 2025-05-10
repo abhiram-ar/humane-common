@@ -1,5 +1,5 @@
+import { AppEventSource } from './AppEventSource';
 import { RootAppEvent } from './eventSchema';
-import { AppEventSource } from './index';
 export declare enum UserEventsTypes {
     USER_PASSWORD_RECOVERY_REQUESTED = "user.password.recovery-requested",
     USER_SINGUP = "user.singup"

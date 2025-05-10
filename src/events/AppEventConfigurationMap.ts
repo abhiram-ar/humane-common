@@ -1,8 +1,7 @@
 // central event registry
-import { AppEventSource, AppEventsTypes } from '.';
-import {
-   UserEventsTypes,
-} from './user-service.events';
+import { AppEventSource } from './AppEventSource';
+import { AppEventsTypes } from './AppEventTypes';
+import { UserEventsTypes } from './user-service.events';
 
 export const appEventConfigurations = {
    [UserEventsTypes.USER_PASSWORD_RECOVERY_REQUESTED]: {
