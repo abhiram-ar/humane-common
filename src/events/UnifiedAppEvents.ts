@@ -1,4 +1,5 @@
 import {
+   UserAvatarURLUpdatedEvent,
    UserCreatedEvent,
    UserNameBioUpdatedEvent,
    UserPasswordRecoveryRequestEvent,
@@ -10,4 +11,5 @@ export type AppEvent =
    | UserPasswordRecoveryRequestEvent
    | UserSignupEvent
    | UserCreatedEvent
-   | UserNameBioUpdatedEvent;
+   | UserNameBioUpdatedEvent
+   | UserAvatarURLUpdatedEvent;

@@ -3,7 +3,8 @@ export declare enum UserEventsTypes {
     USER_PASSWORD_RECOVERY_REQUESTED = "user.password.recovery-requested",
     USER_SINGUP = "user.singup",
     USER_CREATED = "user.created",
-    USER_NAME_BIO_UPDATED = "user.name.bio.updated"
+    USER_NAME_BIO_UPDATED = "user.name.bio.updated",
+    USER_AVATAR_UPDATED = "user.avatar.updated"
 }
 export type UserPasswordRecoveryEventPaylaod = {
     email: string;
@@ -35,6 +36,10 @@ export type UserNameBioUpdatedEventPayload = {
     firstName: string;
     lastName: string | null | undefined;
     bio: string | null | undefined;
-    createdAt: string;
 };
 export type UserNameBioUpdatedEvent = RootAppEvent<UserEventsTypes.USER_NAME_BIO_UPDATED, UserNameBioUpdatedEventPayload>;
+export type UpdateUserAvatarURLEventPayload = {
+    id: string;
+    avatarURL: string | null | undefined;
+};
+export type UserAvatarURLUpdatedEvent = RootAppEvent<UserEventsTypes.USER_AVATAR_UPDATED, UpdateUserAvatarURLEventPayload>;

@@ -7,4 +7,5 @@ var UserEventsTypes;
     UserEventsTypes["USER_SINGUP"] = "user.singup";
     UserEventsTypes["USER_CREATED"] = "user.created";
     UserEventsTypes["USER_NAME_BIO_UPDATED"] = "user.name.bio.updated";
+    UserEventsTypes["USER_AVATAR_UPDATED"] = "user.avatar.updated";
 })(UserEventsTypes || (exports.UserEventsTypes = UserEventsTypes = {}));
