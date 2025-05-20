@@ -1,5 +1,3 @@
-import { AppEventsTypes } from './AppEventTypes';
-import { createEvent } from './createEvent';
 import { RootAppEvent } from './eventSchema';
 
 export enum UserEventsTypes {
