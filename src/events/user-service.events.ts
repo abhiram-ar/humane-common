@@ -39,11 +39,11 @@ export type UserCreatedEvent = RootAppEvent<UserEventsTypes.USER_CREATED, UserCr
 export type UserNameBioUpdatedEventPayload = {
    id: string;
    firstName: string;
-   lastName: string | undefined | null;
-   bio: string | undefined | null;
+   lastName: string | null | undefined;
+   bio: string | null | undefined;
    createdAt: string;
 };
 export type UserNameBioUpdatedEvent = RootAppEvent<
    UserEventsTypes.USER_NAME_BIO_UPDATED,
-   UserPasswordRecoveryEventPaylaod
+   UserNameBioUpdatedEventPayload
 >;
