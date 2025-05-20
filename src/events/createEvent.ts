@@ -1,7 +1,7 @@
-import { AppEvent, AppEventsTypes } from '.';
+import { AppEvent, AppEvents } from '.';
 import { randomUUID } from 'node:crypto';
 
-export const createEvent = <T extends AppEventsTypes>(
+export const createEvent = <T extends AppEvents>(
    eventType: T,
    payload: Extract<AppEvent, { eventType: T }>['payload'],
    version: number = 1
