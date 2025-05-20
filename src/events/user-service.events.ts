@@ -24,7 +24,7 @@ export type UserSignupEventPayload = {
 };
 export type UserSignupEvent = RootAppEvent<UserEventsTypes.USER_SINGUP, UserSignupEventPayload>;
 // -------------------
-export type UserCreatedEventPaylod = {
+export type UserCreatedEventPayload = {
    id: string;
    firstName: string;
    email: string;
@@ -33,4 +33,4 @@ export type UserCreatedEventPaylod = {
    isBlocked: boolean;
    isHotUser: boolean;
 };
-export type UserCreatedEvent = RootAppEvent<UserEventsTypes.USER_CREATED, UserCreatedEventPaylod>;
+export type UserCreatedEvent = RootAppEvent<UserEventsTypes.USER_CREATED, UserCreatedEventPayload>;
