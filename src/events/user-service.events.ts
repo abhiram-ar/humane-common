@@ -4,6 +4,7 @@ export enum UserEventsTypes {
    USER_PASSWORD_RECOVERY_REQUESTED = 'user.password.recovery-requested',
    USER_SINGUP = 'user.singup',
    USER_CREATED = 'user.created',
+   USER_NAME_BIO_UPDATED = 'user.name.bio.updated',
 }
 
 export type UserPasswordRecoveryEventPaylaod = {
@@ -34,3 +35,15 @@ export type UserCreatedEventPayload = {
    isHotUser: boolean;
 };
 export type UserCreatedEvent = RootAppEvent<UserEventsTypes.USER_CREATED, UserCreatedEventPayload>;
+// ------------------
+export type UserNameBioUpdatedEventPayload = {
+   id: string;
+   firstName: string;
+   lastName: string | undefined | null;
+   bio: string | undefined | null;
+   createdAt: string;
+};
+export type UserNameBioUpdatedEvent = RootAppEvent<
+   UserEventsTypes.USER_NAME_BIO_UPDATED,
+   UserPasswordRecoveryEventPaylaod
+>;
