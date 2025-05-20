@@ -1,4 +1,8 @@
-import { UserPasswordRecoveryRequestEvent, UserSignupEvent } from './user-service.events';
+import {
+   UserCreatedEvent,
+   UserPasswordRecoveryRequestEvent,
+   UserSignupEvent,
+} from './user-service.events';
 
 // union of all appevents
-export type AppEvent = UserPasswordRecoveryRequestEvent | UserSignupEvent;
+export type AppEvent = UserPasswordRecoveryRequestEvent | UserSignupEvent | UserCreatedEvent;

@@ -1,7 +1,8 @@
 import { RootAppEvent } from './eventSchema';
 export declare enum UserEventsTypes {
     USER_PASSWORD_RECOVERY_REQUESTED = "user.password.recovery-requested",
-    USER_SINGUP = "user.singup"
+    USER_SINGUP = "user.singup",
+    USER_CREATED = "user.created"
 }
 export type UserPasswordRecoveryEventPaylaod = {
     email: string;
@@ -18,3 +19,13 @@ export type UserSignupEventPayload = {
     };
 };
 export type UserSignupEvent = RootAppEvent<UserEventsTypes.USER_SINGUP, UserSignupEventPayload>;
+export type UserCreatedEventPaylod = {
+    id: string;
+    firstName: string;
+    email: string;
+    lastName: string | undefined | null;
+    createdAt: string;
+    isBlocked: boolean;
+    isHotUser: boolean;
+};
+export type UserCreatedEvent = RootAppEvent<UserEventsTypes.USER_CREATED, UserCreatedEventPaylod>;
