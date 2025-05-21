@@ -1,2 +1,0 @@
-import { UserAvatarKeyUpdatedEvent, UserBlockStatusUpdatedEvent, UserCoverPhotoKeyUpdatedEvent, UserCreatedEvent, UserPasswordRecoveryRequestEvent, UserSignupEvent, UserUpdatedEvent } from './user-service.events';
-export type AppEvent = UserPasswordRecoveryRequestEvent | UserSignupEvent | UserCreatedEvent | UserUpdatedEvent | UserAvatarKeyUpdatedEvent | UserCoverPhotoKeyUpdatedEvent | UserBlockStatusUpdatedEvent;
