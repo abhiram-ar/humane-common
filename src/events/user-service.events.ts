@@ -1,21 +1,21 @@
 import { RootAppEvent } from './eventSchema';
 
-export enum UserEventsTypes {
-   USER_PASSWORD_RECOVERY_REQUESTED = 'user.password.recovery-requested',
-   USER_SINGUP = 'user.singup',
-   USER_CREATED = 'user.created',
-   USER_NAME_BIO_UPDATED = 'user.name.bio.updated',
-   USER_AVATAR_UPDATED = 'user.avatar.updated',
-   USER_COVER_PHOTO_UPDATED = 'user.coverphoto.updated',
-   USER_BLOCK_STATUS_UPDATED = 'user.isBlocked.updated',
-}
+export const UserEventsTypes = {
+   USER_PASSWORD_RECOVERY_REQUESTED: 'user.password.recovery-requested',
+   USER_SINGUP: 'user.singup',
+   USER_CREATED: 'user.created',
+   USER_NAME_BIO_UPDATED: 'user.name.bio.updated',
+   USER_AVATAR_UPDATED: 'user.avatar.updated',
+   USER_COVER_PHOTO_UPDATED: 'user.coverphoto.updated',
+   USER_BLOCK_STATUS_UPDATED: 'user.isBlocked.updated',
+} as const;
 
 export type UserPasswordRecoveryEventPaylaod = {
    email: string;
    data: { token: string };
 };
 export type UserPasswordRecoveryRequestEvent = RootAppEvent<
-   UserEventsTypes.USER_PASSWORD_RECOVERY_REQUESTED,
+   typeof UserEventsTypes.USER_PASSWORD_RECOVERY_REQUESTED,
    UserPasswordRecoveryEventPaylaod
 >;
 // -------------------
@@ -26,7 +26,10 @@ export type UserSignupEventPayload = {
       firstName: string;
    };
 };
-export type UserSignupEvent = RootAppEvent<UserEventsTypes.USER_SINGUP, UserSignupEventPayload>;
+export type UserSignupEvent = RootAppEvent<
+   typeof UserEventsTypes.USER_SINGUP,
+   UserSignupEventPayload
+>;
 // -------------------
 export type UserCreatedEventPayload = {
    id: string;
@@ -37,7 +40,10 @@ export type UserCreatedEventPayload = {
    isBlocked: boolean;
    isHotUser: boolean;
 };
-export type UserCreatedEvent = RootAppEvent<UserEventsTypes.USER_CREATED, UserCreatedEventPayload>;
+export type UserCreatedEvent = RootAppEvent<
+   typeof UserEventsTypes.USER_CREATED,
+   UserCreatedEventPayload
+>;
 // ------------------
 export type UserNameBioUpdatedEventPayload = {
    id: string;
@@ -46,7 +52,7 @@ export type UserNameBioUpdatedEventPayload = {
    bio: string | null;
 };
 export type UserNameBioUpdatedEvent = RootAppEvent<
-   UserEventsTypes.USER_NAME_BIO_UPDATED,
+   typeof UserEventsTypes.USER_NAME_BIO_UPDATED,
    UserNameBioUpdatedEventPayload
 >;
 // ---------------
@@ -55,7 +61,7 @@ export type UpdateUserAvatarKeyEventPayload = {
    avatarKey: string | null;
 };
 export type UserAvatarKeyUpdatedEvent = RootAppEvent<
-   UserEventsTypes.USER_AVATAR_UPDATED,
+   typeof UserEventsTypes.USER_AVATAR_UPDATED,
    UpdateUserAvatarKeyEventPayload
 >;
 // ---------------
@@ -64,7 +70,7 @@ export type UpdateUserCoverPhotoKeyEventPayload = {
    coverPhotoKey: string | null;
 };
 export type UserCoverPhotoKeyUpdatedEvent = RootAppEvent<
-   UserEventsTypes.USER_COVER_PHOTO_UPDATED,
+   typeof UserEventsTypes.USER_COVER_PHOTO_UPDATED,
    UpdateUserCoverPhotoKeyEventPayload
 >;
 // ---------------
@@ -73,6 +79,6 @@ export type UpdateUserBlockStatusEventPaylaod = {
    isBlocked: boolean;
 };
 export type UserBlockStatusUpdatedEvent = RootAppEvent<
-   UserEventsTypes.USER_BLOCK_STATUS_UPDATED,
+   typeof UserEventsTypes.USER_BLOCK_STATUS_UPDATED,
    UpdateUserBlockStatusEventPaylaod
 >;
