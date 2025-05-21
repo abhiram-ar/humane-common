@@ -35,6 +35,7 @@ export type UserCreatedEventPayload = {
    id: string;
    firstName: string;
    lastName: string | null;
+   email: string;
    bio: string | null;
    avatarKey: string | null;
    coverPhotoKey: string | null;
@@ -53,6 +54,7 @@ export type UserUpdatedEventPayload = {
    id: string;
    firstName: string;
    lastName: string | null;
+   email: string;
    bio: string | null;
    avatarKey: string | null;
    coverPhotoKey: string | null;
