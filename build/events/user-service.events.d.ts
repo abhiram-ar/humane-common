@@ -3,7 +3,7 @@ export declare const UserEventsTypes: {
     readonly USER_PASSWORD_RECOVERY_REQUESTED: "user.password.recovery-requested";
     readonly USER_SINGUP: "user.singup";
     readonly USER_CREATED: "user.created";
-    readonly USER_NAME_BIO_UPDATED: "user.name.bio.updated";
+    readonly USER_UPDATED: "user.updated";
     readonly USER_AVATAR_UPDATED: "user.avatar.updated";
     readonly USER_COVER_PHOTO_UPDATED: "user.coverphoto.updated";
     readonly USER_BLOCK_STATUS_UPDATED: "user.isBlocked.updated";
@@ -26,20 +26,33 @@ export type UserSignupEvent = RootAppEvent<typeof UserEventsTypes.USER_SINGUP, U
 export type UserCreatedEventPayload = {
     id: string;
     firstName: string;
-    email: string;
     lastName: string | null;
+    bio: string | null;
+    avatarKey: string | null;
+    coverPhotoKey: string | null;
     createdAt: string;
+    updatedAt: string;
+    lastLoginTime: string | null;
     isBlocked: boolean;
     isHotUser: boolean;
+    humaneScore: number;
 };
 export type UserCreatedEvent = RootAppEvent<typeof UserEventsTypes.USER_CREATED, UserCreatedEventPayload>;
-export type UserNameBioUpdatedEventPayload = {
+export type UserUpdatedEventPayload = {
     id: string;
     firstName: string;
     lastName: string | null;
     bio: string | null;
+    avatarKey: string | null;
+    coverPhotoKey: string | null;
+    createdAt: string;
+    updatedAt: string;
+    lastLoginTime: string | null;
+    isBlocked: boolean;
+    isHotUser: boolean;
+    humaneScore: number;
 };
-export type UserNameBioUpdatedEvent = RootAppEvent<typeof UserEventsTypes.USER_NAME_BIO_UPDATED, UserNameBioUpdatedEventPayload>;
+export type UserUpdatedEvent = RootAppEvent<typeof UserEventsTypes.USER_UPDATED, UserUpdatedEventPayload>;
 export type UpdateUserAvatarKeyEventPayload = {
     id: string;
     avatarKey: string | null;
