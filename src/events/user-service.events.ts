@@ -6,6 +6,7 @@ export enum UserEventsTypes {
    USER_CREATED = 'user.created',
    USER_NAME_BIO_UPDATED = 'user.name.bio.updated',
    USER_AVATAR_UPDATED = 'user.avatar.updated',
+   USER_COVER_PHOTO_UPDATED = 'user.coverphoto.updated',
 }
 
 export type UserPasswordRecoveryEventPaylaod = {
@@ -48,11 +49,20 @@ export type UserNameBioUpdatedEvent = RootAppEvent<
    UserNameBioUpdatedEventPayload
 >;
 // ---------------
-export type UpdateUserAvatarURLEventPayload = {
+export type UpdateUserAvatarKeyEventPayload = {
    id: string;
    avatarKey: string | null;
 };
-export type UserAvatarURLUpdatedEvent = RootAppEvent<
+export type UserAvatarKeyUpdatedEvent = RootAppEvent<
    UserEventsTypes.USER_AVATAR_UPDATED,
-   UpdateUserAvatarURLEventPayload
+   UpdateUserAvatarKeyEventPayload
+>;
+// ---------------
+export type UpdateUserCoverPhotoKeyEventPayload = {
+   id: string;
+   coverPhotoKey: string | null;
+};
+export type UserCoverPhotoKeyUpdatedEvent = RootAppEvent<
+   UserEventsTypes.USER_COVER_PHOTO_UPDATED,
+   UpdateUserCoverPhotoKeyEventPayload
 >;
