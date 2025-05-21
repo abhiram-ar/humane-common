@@ -40,6 +40,6 @@ export type UserNameBioUpdatedEventPayload = {
 export type UserNameBioUpdatedEvent = RootAppEvent<UserEventsTypes.USER_NAME_BIO_UPDATED, UserNameBioUpdatedEventPayload>;
 export type UpdateUserAvatarURLEventPayload = {
     id: string;
-    avatarURL: string | null;
+    avatarKey: string | null;
 };
 export type UserAvatarURLUpdatedEvent = RootAppEvent<UserEventsTypes.USER_AVATAR_UPDATED, UpdateUserAvatarURLEventPayload>;
