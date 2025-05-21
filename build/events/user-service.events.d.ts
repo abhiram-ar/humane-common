@@ -25,7 +25,7 @@ export type UserCreatedEventPayload = {
     id: string;
     firstName: string;
     email: string;
-    lastName: string | undefined | null;
+    lastName: string | null;
     createdAt: string;
     isBlocked: boolean;
     isHotUser: boolean;
@@ -34,12 +34,12 @@ export type UserCreatedEvent = RootAppEvent<UserEventsTypes.USER_CREATED, UserCr
 export type UserNameBioUpdatedEventPayload = {
     id: string;
     firstName: string;
-    lastName: string | null | undefined;
-    bio: string | null | undefined;
+    lastName: string | null;
+    bio: string | null;
 };
 export type UserNameBioUpdatedEvent = RootAppEvent<UserEventsTypes.USER_NAME_BIO_UPDATED, UserNameBioUpdatedEventPayload>;
 export type UpdateUserAvatarURLEventPayload = {
     id: string;
-    avatarURL: string | null | undefined;
+    avatarURL: string | null;
 };
 export type UserAvatarURLUpdatedEvent = RootAppEvent<UserEventsTypes.USER_AVATAR_UPDATED, UpdateUserAvatarURLEventPayload>;
