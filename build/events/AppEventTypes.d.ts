@@ -6,5 +6,6 @@ export declare const AppEventsTypes: {
     readonly USER_NAME_BIO_UPDATED: UserEventsTypes.USER_NAME_BIO_UPDATED;
     readonly USER_AVATAR_UPDATED: UserEventsTypes.USER_AVATAR_UPDATED;
     readonly USER_COVER_PHOTO_UPDATED: UserEventsTypes.USER_COVER_PHOTO_UPDATED;
+    readonly USER_BLOCK_STATUS_UPDATED: UserEventsTypes.USER_BLOCK_STATUS_UPDATED;
 };
 export type AppEvents = (typeof AppEventsTypes)[keyof typeof AppEventsTypes];

@@ -5,7 +5,8 @@ export declare enum UserEventsTypes {
     USER_CREATED = "user.created",
     USER_NAME_BIO_UPDATED = "user.name.bio.updated",
     USER_AVATAR_UPDATED = "user.avatar.updated",
-    USER_COVER_PHOTO_UPDATED = "user.coverphoto.updated"
+    USER_COVER_PHOTO_UPDATED = "user.coverphoto.updated",
+    USER_BLOCK_STATUS_UPDATED = "user.isBlocked.updated"
 }
 export type UserPasswordRecoveryEventPaylaod = {
     email: string;
@@ -49,3 +50,8 @@ export type UpdateUserCoverPhotoKeyEventPayload = {
     coverPhotoKey: string | null;
 };
 export type UserCoverPhotoKeyUpdatedEvent = RootAppEvent<UserEventsTypes.USER_COVER_PHOTO_UPDATED, UpdateUserCoverPhotoKeyEventPayload>;
+export type UpdateUserBlockStatusEventPaylaod = {
+    id: string;
+    isBlocked: boolean;
+};
+export type UserBlockStatusUpdatedEvent = RootAppEvent<UserEventsTypes.USER_COVER_PHOTO_UPDATED, UpdateUserBlockStatusEventPaylaod>;

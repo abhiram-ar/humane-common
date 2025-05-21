@@ -1,5 +1,6 @@
 import {
    UserAvatarKeyUpdatedEvent,
+   UserBlockStatusUpdatedEvent,
    UserCoverPhotoKeyUpdatedEvent,
    UserCreatedEvent,
    UserNameBioUpdatedEvent,
@@ -14,4 +15,5 @@ export type AppEvent =
    | UserCreatedEvent
    | UserNameBioUpdatedEvent
    | UserAvatarKeyUpdatedEvent
-   | UserCoverPhotoKeyUpdatedEvent;
+   | UserCoverPhotoKeyUpdatedEvent
+   | UserBlockStatusUpdatedEvent;

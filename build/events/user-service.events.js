@@ -9,4 +9,5 @@ var UserEventsTypes;
     UserEventsTypes["USER_NAME_BIO_UPDATED"] = "user.name.bio.updated";
     UserEventsTypes["USER_AVATAR_UPDATED"] = "user.avatar.updated";
     UserEventsTypes["USER_COVER_PHOTO_UPDATED"] = "user.coverphoto.updated";
+    UserEventsTypes["USER_BLOCK_STATUS_UPDATED"] = "user.isBlocked.updated";
 })(UserEventsTypes || (exports.UserEventsTypes = UserEventsTypes = {}));
