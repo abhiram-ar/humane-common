@@ -73,6 +73,6 @@ export type UpdateUserBlockStatusEventPaylaod = {
    isBlocked: boolean;
 };
 export type UserBlockStatusUpdatedEvent = RootAppEvent<
-   UserEventsTypes.USER_COVER_PHOTO_UPDATED,
+   UserEventsTypes.USER_BLOCK_STATUS_UPDATED,
    UpdateUserBlockStatusEventPaylaod
 >;
