@@ -31,7 +31,6 @@ export type UserCreatedEventPayload = {
     avatarKey: string | null;
     coverPhotoKey: string | null;
     createdAt: string;
-    updatedAt: string;
     lastLoginTime: string | null;
     isBlocked: boolean;
     isHotUser: boolean;
@@ -46,7 +45,6 @@ export type UserUpdatedEventPayload = {
     avatarKey: string | null;
     coverPhotoKey: string | null;
     createdAt: string;
-    updatedAt: string;
     lastLoginTime: string | null;
     isBlocked: boolean;
     isHotUser: boolean;
