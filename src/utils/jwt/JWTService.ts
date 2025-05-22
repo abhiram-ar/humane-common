@@ -1,5 +1,5 @@
 import JWT from 'jsonwebtoken';
-import { IJWTService } from './jwt/IJWTService';
+import { IJWTService } from './IJWTService';
 
 export class JWTService implements IJWTService {
    sign(data: object, secret: string, expiresIn: number): string {
