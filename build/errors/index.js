@@ -22,3 +22,4 @@ __exportStar(require("./JWTError"), exports);
 __exportStar(require("./UnAuthenticatedError"), exports);
 __exportStar(require("./UserBlockedError"), exports);
 __exportStar(require("./UserNotFoundError"), exports);
+__exportStar(require("./ZodValidationError"), exports);
