@@ -74,6 +74,7 @@ export declare const FriendshipEventsTypes: {
 };
 type FriendshipStatus = 'PENDING' | 'ACCEPTED';
 export type FriendshipEventPayload = {
+    id: string;
     user1Id: string;
     user2Id: string;
     status: FriendshipStatus;
