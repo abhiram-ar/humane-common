@@ -1,4 +1,8 @@
 export declare const AppEventsTypes: {
+    readonly FRIEND_REQ_SENT: "friend.req.sent";
+    readonly FRIEND_REQ_ACCEPTED: "friend.req.accepted";
+    readonly FRIEND_REQ_CANCELLED: "friend.req.cancelled";
+    readonly FRIENDSHIP_DELETED: "friend.req.deleted";
     readonly USER_PASSWORD_RECOVERY_REQUESTED: "user.password.recovery-requested";
     readonly USER_SINGUP: "user.singup";
     readonly USER_CREATED: "user.created";

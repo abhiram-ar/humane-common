@@ -93,3 +93,58 @@ export type UserBlockStatusUpdatedEvent = RootAppEvent<
    typeof UserEventsTypes.USER_BLOCK_STATUS_UPDATED,
    UpdateUserBlockStatusEventPaylaod
 >;
+
+// ----------------friendship event-----------------------
+
+export const FriendshipEventsTypes = {
+   FRIEND_REQ_SENT: 'friend.req.sent',
+   FRIEND_REQ_ACCEPTED: 'friend.req.accepted',
+   FRIEND_REQ_CANCELLED: 'friend.req.cancelled',
+   FRIENDSHIP_DELETED: 'friend.req.deleted',
+} as const;
+
+type FriendshipStatus = 'PENDING' | 'ACCEPTED';
+export type FriendshipEventPayload = {
+   user1Id: string;
+   user2Id: string;
+   status: FriendshipStatus;
+   requesterId: string;
+   receiverId: string;
+   createdAt: string;
+   updatedAt?: string;
+};
+
+export type FriendReqSendEvent = RootAppEvent<
+   typeof FriendshipEventsTypes.FRIEND_REQ_SENT,
+   FriendshipEventPayload
+>;
+
+export type FriendReqCancelledEvent = RootAppEvent<
+   typeof FriendshipEventsTypes.FRIEND_REQ_CANCELLED,
+   FriendshipEventPayload
+>;
+
+export type FriendReqAcceptedEvent = RootAppEvent<
+   typeof FriendshipEventsTypes.FRIEND_REQ_ACCEPTED,
+   FriendshipEventPayload
+>;
+
+export type FriendshipDeletedEvent = RootAppEvent<
+   typeof FriendshipEventsTypes.FRIENDSHIP_DELETED,
+   FriendshipEventPayload
+>;
+
+// -------------------- common export------------------
+
+export type UserServiceEvents =
+   | UserPasswordRecoveryRequestEvent
+   | UserSignupEvent
+   | UserCreatedEvent
+   | UserUpdatedEvent
+   | UserAvatarKeyUpdatedEvent
+   | UserCoverPhotoKeyUpdatedEvent
+   | UserBlockStatusUpdatedEvent
+   | FriendReqSendEvent
+   | FriendReqCancelledEvent
+   | FriendReqAcceptedEvent
+   | FriendshipDeletedEvent;
