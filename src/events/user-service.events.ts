@@ -153,4 +153,5 @@ export type UserServiceEvents =
    | FriendReqSendEvent
    | FriendReqCancelledEvent
    | FriendReqAcceptedEvent
+   | FriendshipDecliendEvent
    | FriendshipDeletedEvent;
