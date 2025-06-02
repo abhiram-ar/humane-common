@@ -100,10 +100,11 @@ export const FriendshipEventsTypes = {
    FRIEND_REQ_SENT: 'friend.req.sent',
    FRIEND_REQ_ACCEPTED: 'friend.req.accepted',
    FRIEND_REQ_CANCELLED: 'friend.req.cancelled',
+   FRIEND_REQ_DECLIED: 'friend.req.decliend',
    FRIENDSHIP_DELETED: 'friend.req.deleted',
 } as const;
 
-type FriendshipStatus = 'PENDING' | 'ACCEPTED';
+type FriendshipStatus = 'PENDING' | 'ACCEPTED' | 'DECLIEND';
 export type FriendshipEventPayload = {
    id: string;
    user1Id: string;
@@ -127,6 +128,10 @@ export type FriendReqCancelledEvent = RootAppEvent<
 
 export type FriendReqAcceptedEvent = RootAppEvent<
    typeof FriendshipEventsTypes.FRIEND_REQ_ACCEPTED,
+   FriendshipEventPayload
+>;
+export type FriendshipDecliendEvent = RootAppEvent<
+   typeof FriendshipEventsTypes.FRIEND_REQ_DECLIED,
    FriendshipEventPayload
 >;
 
