@@ -73,7 +73,7 @@ export declare const FriendshipEventsTypes: {
     readonly FRIEND_REQ_DECLIED: "friend.req.decliend";
     readonly FRIENDSHIP_DELETED: "friend.req.deleted";
 };
-type FriendshipStatus = 'PENDING' | 'ACCEPTED' | 'DECLIEND';
+type FriendshipStatus = 'PENDING' | 'ACCEPTED' | 'DECLINED';
 export type FriendshipEventPayload = {
     id: string;
     user1Id: string;
