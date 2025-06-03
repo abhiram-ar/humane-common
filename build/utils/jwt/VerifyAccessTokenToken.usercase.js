@@ -6,12 +6,12 @@ class VerifyAccessToken {
     constructor(_jwtService) {
         this._jwtService = _jwtService;
         this.execute = (accessToken) => {
-            if (!process.env.ACCESS_TOKEN_SECRET) {
+            if (!process.env.accessTokenSecret) {
                 throw new Error('Access token secrect missing in env');
             }
             let tokenPayload;
             try {
-                tokenPayload = this._jwtService.verify(accessToken, process.env.ACCESS_TOKEN_SECRET);
+                tokenPayload = this._jwtService.verify(accessToken, process.env.accessTokenSecret);
             }
             catch (error) {
                 console.log(error);

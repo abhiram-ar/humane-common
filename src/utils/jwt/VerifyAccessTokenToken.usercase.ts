@@ -6,7 +6,7 @@ export class VerifyAccessToken {
    constructor(private readonly _jwtService: IJWTService) {}
 
    execute = (accessToken: string): JWTTokenPaylod => {
-      if (!process.env.ACCESS_TOKEN_SECRET) {
+      if (!process.env.accessTokenSecret) {
          throw new Error('Access token secrect missing in env');
       }
 
@@ -15,7 +15,7 @@ export class VerifyAccessToken {
       try {
          tokenPayload = this._jwtService.verify<JWTTokenPaylod>(
             accessToken,
-            process.env.ACCESS_TOKEN_SECRET as string
+            process.env.accessTokenSecret as string
          );
       } catch (error) {
          console.log(error);
