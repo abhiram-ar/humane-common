@@ -1,3 +1,2 @@
-export * from './IJWTService';
+export * from './JWTService';
 export * from './VerifyAccessTokenToken.usercase';
-export * from './config';
