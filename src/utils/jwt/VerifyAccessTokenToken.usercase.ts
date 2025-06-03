@@ -6,7 +6,7 @@ export class VerifyAccessToken {
    constructor(private readonly _jwtService: IJWTService) {}
 
    execute = (accessToken: string): JWTTokenPaylod => {
-      if (process.env.ACCESS_TOKEN_SECRET) {
+      if (!process.env.ACCESS_TOKEN_SECRET) {
          throw new Error('Access token secrect missing in env');
       }
 
@@ -18,6 +18,7 @@ export class VerifyAccessToken {
             process.env.ACCESS_TOKEN_SECRET as string
          );
       } catch (error) {
+         console.log(error);
          throw new UnAuthenticatedError('Invalid/Expired accessToken');
       }
 

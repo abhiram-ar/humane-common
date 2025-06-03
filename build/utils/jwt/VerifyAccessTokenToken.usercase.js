@@ -6,7 +6,7 @@ class VerifyAccessToken {
     constructor(_jwtService) {
         this._jwtService = _jwtService;
         this.execute = (accessToken) => {
-            if (process.env.ACCESS_TOKEN_SECRET) {
+            if (!process.env.ACCESS_TOKEN_SECRET) {
                 throw new Error('Access token secrect missing in env');
             }
             let tokenPayload;
@@ -14,6 +14,7 @@ class VerifyAccessToken {
                 tokenPayload = this._jwtService.verify(accessToken, process.env.ACCESS_TOKEN_SECRET);
             }
             catch (error) {
+                console.log(error);
                 throw new errors_1.UnAuthenticatedError('Invalid/Expired accessToken');
             }
             return tokenPayload;
