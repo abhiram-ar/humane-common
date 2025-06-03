@@ -1,6 +1,6 @@
 {
    "name": "humane-common",
-   "version": "1.0.64",
+   "version": "1.0.65",
    "description": "init",
    "main": "./build/index.js",
    "types": "./build/index.d.ts",
