@@ -7,7 +7,7 @@ class VerifyAccessToken {
         this._jwtService = _jwtService;
         this.execute = (accessToken) => {
             if (!process.env.accessTokenSecret) {
-                throw new Error('Access token secrect missing in env');
+                throw new errors_1.GenericError('Access token secrect missing in env');
             }
             let tokenPayload;
             try {

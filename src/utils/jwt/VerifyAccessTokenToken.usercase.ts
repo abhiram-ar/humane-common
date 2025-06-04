@@ -1,4 +1,4 @@
-import { UnAuthenticatedError } from '../../errors';
+import { GenericError, UnAuthenticatedError } from '../../errors';
 import { JWTTokenPaylod } from '../../Types/JWTTokenPayload.type';
 import { IJWTService } from './IJWTService';
 
@@ -7,7 +7,7 @@ export class VerifyAccessToken {
 
    execute = (accessToken: string): JWTTokenPaylod => {
       if (!process.env.accessTokenSecret) {
-         throw new Error('Access token secrect missing in env');
+         throw new GenericError('Access token secrect missing in env');
       }
 
       let tokenPayload: JWTTokenPaylod;
