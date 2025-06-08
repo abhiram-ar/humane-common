@@ -1,2 +1,3 @@
 import { UserServiceEvents } from './user-service.events';
-export type AppEvent = UserServiceEvents;
+import { WriterServiceEvents } from './writer-service-events';
+export type AppEvent = UserServiceEvents | WriterServiceEvents;

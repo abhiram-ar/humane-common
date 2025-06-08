@@ -3,4 +3,12 @@ export const MessageBrokerTopics = {
    USER_SINGUP_EVENTS_TOPIC: 'user.signup.events',
    USER_PROFILE_EVENTS_TOPIC: 'user.profile.events',
    FRIENDSHIP_EVENTS_TOPIC: 'friendship.events',
-};
+   
+   POST_CREATE_EVENTS_TOPIC: 'post.create.events', // cant update the context/media once updated
+   POST_UPDATED_EVENTS_TOPIC: 'post.updated.events', // cant update the context/media once updated
+   POST_DELETED_EVENTS_TOPIC: "post.deleted.events",
+   
+   
+   MODERATION_COMPLETE_POST: "post.moderation.complete.events"
+
+} as const;

@@ -20,3 +20,4 @@ __exportStar(require("./eventSchema"), exports);
 __exportStar(require("./kafkaTopics"), exports);
 __exportStar(require("./UnifiedAppEvents"), exports);
 __exportStar(require("./user-service.events"), exports);
+__exportStar(require("./writer-service-events"), exports);
