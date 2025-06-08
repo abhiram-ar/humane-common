@@ -8,6 +8,8 @@ exports.MessageBrokerTopics = {
     FRIENDSHIP_EVENTS_TOPIC: 'friendship.events',
     POST_CREATE_EVENTS_TOPIC: 'post.create.events', // cant update the context/media once updated
     POST_UPDATED_EVENTS_TOPIC: 'post.updated.events', // cant update the context/media once updated
-    POST_DELETED_EVENTS_TOPIC: "post.deleted.events",
-    MODERATION_COMPLETE_POST: "post.moderation.complete.events"
+    POST_DELETED_EVENTS_TOPIC: 'post.deleted.events',
+    COMMENT_CREATED_EVENTS_TOPIC: 'comment.created.events',
+    COMMENT_DELTED_EVENTS_TOPIC: 'comment.delted.events',
+    MODERATION_COMPLETE_POST: 'post.moderation.complete.events',
 };
