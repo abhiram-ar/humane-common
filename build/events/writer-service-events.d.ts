@@ -22,7 +22,7 @@ export type PostEventPayload = {
     posterKey: string | null;
     visibility: (typeof PostVisibility)[keyof typeof PostVisibility];
     moderationStatus: (typeof ModerationStatus)[keyof typeof ModerationStatus];
-    moderationMetadata: any;
+    moderationMetadata: any | null;
     createdAt: Date;
     updatedAt: Date;
 };
