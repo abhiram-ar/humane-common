@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UnAuthenticatedError = void 0;
 const AppError_abstract_1 = require("./AppError.abstract");
 class UnAuthenticatedError extends AppError_abstract_1.AppError {
-    constructor(message) {
+    constructor(message = 'user not found in request/Unauthenticated') {
         super(message);
         this.message = message;
         this.statusCode = 401;
