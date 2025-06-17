@@ -5,3 +5,4 @@ export * from './kafkaTopics';
 export * from './UnifiedAppEvents';
 export * from './user-service.events';
 export * from './writer-service-events';
+export * from './IConsumer';
