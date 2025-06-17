@@ -6,4 +6,6 @@ export * from './JWTError';
 export * from './UnAuthenticatedError';
 export * from './UserBlockedError';
 export * from './UserNotFoundError';
-export * from "./ZodValidationError"
+export * from './ZodValidationError';
+export * from './InvalidEventPayloadError';
+export * from './EventConsumerMissMatchError';

@@ -23,3 +23,5 @@ __exportStar(require("./UnAuthenticatedError"), exports);
 __exportStar(require("./UserBlockedError"), exports);
 __exportStar(require("./UserNotFoundError"), exports);
 __exportStar(require("./ZodValidationError"), exports);
+__exportStar(require("./InvalidEventPayloadError"), exports);
+__exportStar(require("./EventConsumerMissMatchError"), exports);
