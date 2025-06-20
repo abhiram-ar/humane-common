@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.EventBusError = void 0;
 const AppError_abstract_1 = require("./AppError.abstract");
 class EventBusError extends AppError_abstract_1.AppError {
-    constructor(message) {
+    constructor(message = 'Error publishing event to event bus') {
         super(message);
         this.message = message;
         this.statusCode = 500;
