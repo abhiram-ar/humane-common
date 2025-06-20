@@ -9,6 +9,8 @@ exports.WriterEventsTypes = {
     COMMENT_DELTED: 'comment.deleted',
     ADD_COMMENT_LIKE_REQUESTED: 'comment.like.requested',
     REMOVE_COMMENT_LIKE_REQUESTED: 'comment.unlike.requested',
+    COMMENT_LIKED: 'comment.liked',
+    COMMENT_UNLIKED: 'comment.unliked',
 };
 // ---------------------post events-------------------
 exports.PostVisibility = {

@@ -7,6 +7,8 @@ export declare const WriterEventsTypes: {
     readonly COMMENT_DELTED: "comment.deleted";
     readonly ADD_COMMENT_LIKE_REQUESTED: "comment.like.requested";
     readonly REMOVE_COMMENT_LIKE_REQUESTED: "comment.unlike.requested";
+    readonly COMMENT_LIKED: "comment.liked";
+    readonly COMMENT_UNLIKED: "comment.unliked";
 };
 export declare const PostVisibility: {
     readonly PUBLIC: "public";
@@ -47,4 +49,12 @@ export type CommentLikeRequestPayload = {
 };
 export type AddCommentLikeRequestEvent = RootAppEvent<typeof WriterEventsTypes.ADD_COMMENT_LIKE_REQUESTED, CommentLikeRequestPayload>;
 export type RemoveCommentLikeRequestEvent = RootAppEvent<typeof WriterEventsTypes.REMOVE_COMMENT_LIKE_REQUESTED, CommentLikeRequestPayload>;
-export type WriterServiceEvents = PostCreatedEvent | PostDeletedEvent | PostUpdatedEvent | CommentCreatedEvent | CommentDeletedEvent | AddCommentLikeRequestEvent | RemoveCommentLikeRequestEvent;
+export type CommentLikeEventPayload = {
+    authorId: string;
+    commentId: string;
+    createdAt: Date;
+    updatedAt: Date;
+};
+export type CommnetLikedEvent = RootAppEvent<typeof WriterEventsTypes.COMMENT_LIKED, CommentLikeEventPayload>;
+export type CommentUnlikedEvent = RootAppEvent<typeof WriterEventsTypes.COMMENT_UNLIKED, CommentLikeEventPayload>;
+export type WriterServiceEvents = PostCreatedEvent | PostDeletedEvent | PostUpdatedEvent | CommentCreatedEvent | CommentDeletedEvent | AddCommentLikeRequestEvent | RemoveCommentLikeRequestEvent | CommnetLikedEvent | CommentUnlikedEvent;
