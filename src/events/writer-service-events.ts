@@ -88,6 +88,7 @@ export type RemoveCommentLikeRequestEvent = RootAppEvent<
    CommentLikeRequestPayload
 >;
 
+
 // -------------------- common export------------------
 
 export type WriterServiceEvents =

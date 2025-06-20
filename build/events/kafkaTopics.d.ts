@@ -8,5 +8,7 @@ export declare const MessageBrokerTopics: {
     readonly POST_DELETED_EVENTS_TOPIC: "post.deleted.events";
     readonly COMMENT_CREATED_EVENTS_TOPIC: "comment.created.events";
     readonly COMMENT_DELTED_EVENTS_TOPIC: "comment.delted.events";
+    readonly ADD_COMMENT_LIKE_REQUEST_TOPIC: "comment.like.request";
+    readonly REMOVE_COMMENT_LIKE_REQUEST_TOPIC: "comment.unlike.request";
     readonly MODERATION_COMPLETE_POST: "post.moderation.complete.events";
 };

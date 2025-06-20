@@ -11,5 +11,7 @@ exports.MessageBrokerTopics = {
     POST_DELETED_EVENTS_TOPIC: 'post.deleted.events',
     COMMENT_CREATED_EVENTS_TOPIC: 'comment.created.events',
     COMMENT_DELTED_EVENTS_TOPIC: 'comment.delted.events',
+    ADD_COMMENT_LIKE_REQUEST_TOPIC: 'comment.like.request',
+    REMOVE_COMMENT_LIKE_REQUEST_TOPIC: 'comment.unlike.request',
     MODERATION_COMPLETE_POST: 'post.moderation.complete.events',
 };

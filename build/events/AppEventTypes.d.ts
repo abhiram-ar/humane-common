@@ -4,6 +4,8 @@ export declare const AppEventsTypes: {
     readonly POST_DELETED: "post.deleted";
     readonly COMMENT_CREATED: "comment.created";
     readonly COMMENT_DELTED: "comment.deleted";
+    readonly ADD_COMMENT_LIKE_REQUESTED: "comment.like.requested";
+    readonly REMOVE_COMMENT_LIKE_REQUESTED: "comment.unlike.requested";
     readonly FRIEND_REQ_SENT: "friend.req.sent";
     readonly FRIEND_REQ_ACCEPTED: "friend.req.accepted";
     readonly FRIEND_REQ_CANCELLED: "friend.req.cancelled";

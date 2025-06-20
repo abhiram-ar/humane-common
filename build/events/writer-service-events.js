@@ -7,7 +7,10 @@ exports.WriterEventsTypes = {
     POST_DELETED: 'post.deleted',
     COMMENT_CREATED: 'comment.created',
     COMMENT_DELTED: 'comment.deleted',
+    ADD_COMMENT_LIKE_REQUESTED: 'comment.like.requested',
+    REMOVE_COMMENT_LIKE_REQUESTED: 'comment.unlike.requested',
 };
+// ---------------------post events-------------------
 exports.PostVisibility = {
     PUBLIC: 'public',
     FRIENDS: 'friends',
