@@ -11,10 +11,14 @@ const AuthenticateWithNoError = (req, res, next) => {
     if (!token) {
         return next();
     }
-    const payload = config_1.verifyAccessToken.execute(token);
-    if (payload.type === 'user' || payload.type === 'admin') {
-        req.user = payload;
+    try {
+        const payload = config_1.verifyAccessToken.execute(token);
+        if (payload.type === 'user' || payload.type === 'admin') {
+            req.user = payload;
+        }
     }
-    return next();
+    catch (error) {
+        next();
+    }
 };
 exports.AuthenticateWithNoError = AuthenticateWithNoError;

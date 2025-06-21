@@ -20,11 +20,12 @@ export const AuthenticateWithNoError = (req: Request, res: Response, next: NextF
    if (!token) {
       return next();
    }
-
-   const payload = verifyAccessToken.execute(token);
-
-   if (payload.type === 'user' || payload.type === 'admin') {
-      req.user = payload;
+   try {
+      const payload = verifyAccessToken.execute(token);
+      if (payload.type === 'user' || payload.type === 'admin') {
+         req.user = payload;
+      }
+   } catch (error) {
+      next();
    }
-   return next();
 };
