@@ -25,6 +25,7 @@ export const AuthenticateWithNoError = (req: Request, res: Response, next: NextF
       if (payload.type === 'user' || payload.type === 'admin') {
          req.user = payload;
       }
+      next();
    } catch (error) {
       next();
    }

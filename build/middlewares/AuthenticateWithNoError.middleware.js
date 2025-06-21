@@ -16,6 +16,7 @@ const AuthenticateWithNoError = (req, res, next) => {
         if (payload.type === 'user' || payload.type === 'admin') {
             req.user = payload;
         }
+        next();
     }
     catch (error) {
         next();
