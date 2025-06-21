@@ -17,3 +17,4 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./authorization.middleware"), exports);
 __exportStar(require("./error.middeware"), exports);
 __exportStar(require("./isAuthenticated.middleware"), exports);
+__exportStar(require("./AuthenticateWithNoError.middleware"), exports);
