@@ -9,7 +9,7 @@ export const WriterEventsTypes = {
    COMMENT_DELTED: 'comment.deleted',
 
    ADD_COMMENT_LIKE_REQUESTED: 'comment.like.requested',
-   REMOVE_COMMENT_LIKE_REQUESTED: 'comment.unlike.requested',
+   COMMENT_UNLIKE_REQUESTED: 'comment.unlike.requested',
 
    COMMENT_LIKED: 'comment.liked',
    COMMENT_UNLIKED: 'comment.unliked',
@@ -86,8 +86,8 @@ export type AddCommentLikeRequestEvent = RootAppEvent<
    CommentLikeRequestPayload
 >;
 
-export type RemoveCommentLikeRequestEvent = RootAppEvent<
-   typeof WriterEventsTypes.REMOVE_COMMENT_LIKE_REQUESTED,
+export type CommentUnlikeRequestEvent = RootAppEvent<
+   typeof WriterEventsTypes.COMMENT_UNLIKE_REQUESTED,
    CommentLikeRequestPayload
 >;
 
@@ -115,6 +115,6 @@ export type WriterServiceEvents =
    | CommentCreatedEvent
    | CommentDeletedEvent
    | AddCommentLikeRequestEvent
-   | RemoveCommentLikeRequestEvent
+   | CommentUnlikeRequestEvent
    | CommnetLikedEvent
    | CommentUnlikedEvent;

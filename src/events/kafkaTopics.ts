@@ -12,7 +12,7 @@ export const MessageBrokerTopics = {
    COMMENT_DELTED_EVENTS_TOPIC: 'comment.delted.events',
 
    ADD_COMMENT_LIKE_REQUEST_TOPIC: 'comment.like.request',
-   REMOVE_COMMENT_LIKE_REQUEST_TOPIC: 'comment.unlike.request',
+   COMMENT_UNLIKE_REQUEST_TOPIC: 'comment.unlike.request',
 
    COMMENT_LIKED_EVENT_TOPIC: 'comment.liked.events',
    COMMENT_UNLIKED_EVENT_TOPIC: 'comment.unliked.events',
