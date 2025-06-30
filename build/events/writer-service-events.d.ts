@@ -19,16 +19,29 @@ export declare const ModerationStatus: {
     readonly OK: "ok";
     readonly NOT_APPROPRIATE: "notAppropriate";
 };
+export declare const PostAttachmentType: {
+    readonly PHOTO: "image";
+    readonly VIDEO: "video";
+};
+export declare const PostAttachmentStatus: {
+    readonly READY: "ready";
+    readonly PROCESSING: "processing";
+    readonly ERROR: "error";
+};
 export type PostEventPayload = {
     id: string;
     authorId: string;
     content: string;
-    posterKey: string | null;
     visibility: (typeof PostVisibility)[keyof typeof PostVisibility];
-    moderationStatus: (typeof ModerationStatus)[keyof typeof ModerationStatus];
-    moderationMetadata: any | null;
+    hashtags: string[];
     createdAt: Date;
     updatedAt: Date;
+    moderationStatus: (typeof ModerationStatus)[keyof typeof ModerationStatus];
+    moderationMetadata: any | null;
+    attachmentStatus: (typeof PostAttachmentStatus)[keyof typeof PostAttachmentStatus];
+    processedAttachmentKey: string | null;
+    attachmentType: (typeof PostAttachmentType)[keyof typeof PostAttachmentType];
+    rawAttachmentKey: string | null;
 };
 export type PostCreatedEvent = RootAppEvent<typeof WriterEventsTypes.POST_CREATED, PostEventPayload>;
 export type PostDeletedEvent = RootAppEvent<typeof WriterEventsTypes.POST_DELETED, PostEventPayload>;

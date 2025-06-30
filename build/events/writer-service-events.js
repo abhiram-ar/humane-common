@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ModerationStatus = exports.PostVisibility = exports.WriterEventsTypes = void 0;
+exports.PostAttachmentStatus = exports.PostAttachmentType = exports.ModerationStatus = exports.PostVisibility = exports.WriterEventsTypes = void 0;
 exports.WriterEventsTypes = {
     POST_CREATED: 'post.created',
     POST_UPDATED: 'post.updated',
@@ -21,4 +21,10 @@ exports.ModerationStatus = {
     PENDING: 'pending',
     OK: 'ok',
     NOT_APPROPRIATE: 'notAppropriate',
+};
+exports.PostAttachmentType = { PHOTO: 'image', VIDEO: 'video' };
+exports.PostAttachmentStatus = {
+    READY: 'ready',
+    PROCESSING: 'processing',
+    ERROR: 'error',
 };

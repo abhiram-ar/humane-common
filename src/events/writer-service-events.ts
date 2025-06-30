@@ -27,18 +27,30 @@ export const ModerationStatus = {
    NOT_APPROPRIATE: 'notAppropriate',
 } as const;
 
+export const PostAttachmentType = { PHOTO: 'image', VIDEO: 'video' } as const;
+export const PostAttachmentStatus = {
+   READY: 'ready',
+   PROCESSING: 'processing',
+   ERROR: 'error',
+} as const;
+
 export type PostEventPayload = {
    id: string;
    authorId: string;
    content: string;
-   posterKey: string | null;
    visibility: (typeof PostVisibility)[keyof typeof PostVisibility];
+   hashtags: string[];
+
+   createdAt: Date;
+   updatedAt: Date;
 
    moderationStatus: (typeof ModerationStatus)[keyof typeof ModerationStatus];
    moderationMetadata: any | null;
 
-   createdAt: Date;
-   updatedAt: Date;
+   attachmentStatus: (typeof PostAttachmentStatus)[keyof typeof PostAttachmentStatus];
+   processedAttachmentKey: string | null;
+   attachmentType: (typeof PostAttachmentType)[keyof typeof PostAttachmentType];
+   rawAttachmentKey: string | null;
 };
 
 export type PostCreatedEvent = RootAppEvent<
