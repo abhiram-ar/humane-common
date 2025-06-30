@@ -27,7 +27,6 @@ export const ModerationStatus = {
    NOT_APPROPRIATE: 'notAppropriate',
 } as const;
 
-export const PostAttachmentType = { PHOTO: 'image', VIDEO: 'video' } as const;
 export const PostAttachmentStatus = {
    READY: 'ready',
    PROCESSING: 'processing',
@@ -49,7 +48,7 @@ export type PostEventPayload = {
 
    attachmentStatus: (typeof PostAttachmentStatus)[keyof typeof PostAttachmentStatus];
    processedAttachmentKey: string | null;
-   attachmentType: (typeof PostAttachmentType)[keyof typeof PostAttachmentType];
+   attachmentType: string;
    rawAttachmentKey: string | null;
 };
 

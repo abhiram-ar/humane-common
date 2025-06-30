@@ -19,10 +19,6 @@ export declare const ModerationStatus: {
     readonly OK: "ok";
     readonly NOT_APPROPRIATE: "notAppropriate";
 };
-export declare const PostAttachmentType: {
-    readonly PHOTO: "image";
-    readonly VIDEO: "video";
-};
 export declare const PostAttachmentStatus: {
     readonly READY: "ready";
     readonly PROCESSING: "processing";
@@ -40,7 +36,7 @@ export type PostEventPayload = {
     moderationMetadata: any | null;
     attachmentStatus: (typeof PostAttachmentStatus)[keyof typeof PostAttachmentStatus];
     processedAttachmentKey: string | null;
-    attachmentType: (typeof PostAttachmentType)[keyof typeof PostAttachmentType];
+    attachmentType: string;
     rawAttachmentKey: string | null;
 };
 export type PostCreatedEvent = RootAppEvent<typeof WriterEventsTypes.POST_CREATED, PostEventPayload>;
