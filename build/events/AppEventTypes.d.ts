@@ -8,6 +8,7 @@ export declare const AppEventsTypes: {
     readonly COMMENT_UNLIKE_REQUESTED: "comment.unlike.requested";
     readonly COMMENT_LIKED: "comment.liked";
     readonly COMMENT_UNLIKED: "comment.unliked";
+    readonly COMMENT_LIKED_BY_POST_AUTHUR: "comment.liked.by.post.author";
     readonly FRIEND_REQ_SENT: "friend.req.sent";
     readonly FRIEND_REQ_ACCEPTED: "friend.req.accepted";
     readonly FRIEND_REQ_CANCELLED: "friend.req.cancelled";

@@ -11,6 +11,7 @@ exports.WriterEventsTypes = {
     COMMENT_UNLIKE_REQUESTED: 'comment.unlike.requested',
     COMMENT_LIKED: 'comment.liked',
     COMMENT_UNLIKED: 'comment.unliked',
+    COMMENT_LIKED_BY_POST_AUTHUR: 'comment.liked.by.post.author',
 };
 // ---------------------post events-------------------
 exports.PostVisibility = {

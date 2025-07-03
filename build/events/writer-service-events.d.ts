@@ -9,6 +9,7 @@ export declare const WriterEventsTypes: {
     readonly COMMENT_UNLIKE_REQUESTED: "comment.unlike.requested";
     readonly COMMENT_LIKED: "comment.liked";
     readonly COMMENT_UNLIKED: "comment.unliked";
+    readonly COMMENT_LIKED_BY_POST_AUTHUR: "comment.liked.by.post.author";
 };
 export declare const PostVisibility: {
     readonly PUBLIC: "public";
@@ -66,4 +67,11 @@ export type CommentLikeEventPayload = {
 };
 export type CommnetLikedEvent = RootAppEvent<typeof WriterEventsTypes.COMMENT_LIKED, CommentLikeEventPayload>;
 export type CommentUnlikedEvent = RootAppEvent<typeof WriterEventsTypes.COMMENT_UNLIKED, CommentLikeEventPayload>;
-export type WriterServiceEvents = PostCreatedEvent | PostDeletedEvent | PostUpdatedEvent | CommentCreatedEvent | CommentDeletedEvent | AddCommentLikeRequestEvent | CommentUnlikeRequestEvent | CommnetLikedEvent | CommentUnlikedEvent;
+export type CommentLikedByPostAuthorPayload = {
+    commentId: string;
+    commentAutorId: string;
+    postId: string;
+    postAuthorId: string;
+};
+export type CommnetLikedByPostAuthorEvent = RootAppEvent<typeof WriterEventsTypes.COMMENT_LIKED_BY_POST_AUTHUR, CommentLikedByPostAuthorPayload>;
+export type WriterServiceEvents = PostCreatedEvent | PostDeletedEvent | PostUpdatedEvent | CommentCreatedEvent | CommentDeletedEvent | AddCommentLikeRequestEvent | CommentUnlikeRequestEvent | CommnetLikedEvent | CommentUnlikedEvent | CommnetLikedByPostAuthorEvent;

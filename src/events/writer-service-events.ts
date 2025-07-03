@@ -13,6 +13,8 @@ export const WriterEventsTypes = {
 
    COMMENT_LIKED: 'comment.liked',
    COMMENT_UNLIKED: 'comment.unliked',
+
+   COMMENT_LIKED_BY_POST_AUTHUR: 'comment.liked.by.post.author',
 } as const;
 
 // ---------------------post events-------------------
@@ -117,6 +119,21 @@ export type CommentUnlikedEvent = RootAppEvent<
    CommentLikeEventPayload
 >;
 
+// ----------------special events -----------------------
+
+export type CommentLikedByPostAuthorPayload = {
+   commentId: string;
+   commentAutorId: string;
+
+   postId: string;
+   postAuthorId: string;
+};
+
+export type CommnetLikedByPostAuthorEvent = RootAppEvent<
+   typeof WriterEventsTypes.COMMENT_LIKED_BY_POST_AUTHUR,
+   CommentLikedByPostAuthorPayload
+>;
+
 // -------------------- common export------------------
 
 export type WriterServiceEvents =
@@ -128,4 +145,5 @@ export type WriterServiceEvents =
    | AddCommentLikeRequestEvent
    | CommentUnlikeRequestEvent
    | CommnetLikedEvent
-   | CommentUnlikedEvent;
+   | CommentUnlikedEvent
+   | CommnetLikedByPostAuthorEvent;
