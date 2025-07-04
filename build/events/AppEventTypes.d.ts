@@ -1,4 +1,5 @@
 export declare const AppEventsTypes: {
+    readonly USER_REWARDED: "user.rewarded";
     readonly POST_CREATED: "post.created";
     readonly POST_UPDATED: "post.updated";
     readonly POST_DELETED: "post.deleted";
