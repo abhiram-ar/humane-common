@@ -19,4 +19,6 @@ export const MessageBrokerTopics = {
    COMMENT_LIKED_BY_POST_AUTHOR_TOPIC: 'comment.liked.by.post.author.events',
 
    MODERATION_COMPLETE_POST: 'post.moderation.complete.events',
+
+   REWARD_EVENTS_TOPIC: 'reward.events',
 } as const;
