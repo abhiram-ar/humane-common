@@ -25,7 +25,17 @@ export type NewMessageEvent = RootAppEvent<
    NewMessgeEventPayload
 >;
 
-export type FirstReplyWithin24HrEventPayload = Message;
+// ------------------------------------------
+
+export type FirstReplyWithin24HrEventPayload = {
+   messageId: string;
+
+   senderId: string;
+   conversationId: string;
+   message: string;
+
+   sendAt: Date;
+};
 export type FirstReplyWithin24HrEvent = RootAppEvent<
    typeof ChatEventTypes.FIRST_REPLY_WITHIN_24_HR,
    FirstReplyWithin24HrEventPayload
