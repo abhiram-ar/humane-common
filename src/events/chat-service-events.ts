@@ -32,7 +32,7 @@ export type FirstReplyWithin24HrEventPayload = {
 
    senderId: string;
    conversationId: string;
-   message: string;
+   message?: string | undefined;
 
    sendAt: Date;
 };
