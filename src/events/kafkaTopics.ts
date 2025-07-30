@@ -21,4 +21,7 @@ export const MessageBrokerTopics = {
    MODERATION_COMPLETE_POST: 'post.moderation.complete.events',
 
    REWARD_EVENTS_TOPIC: 'reward.events',
+
+   MESSAGE_EVENTS_TOPIC: 'message.events',
+   MESSAGE_SPECAIAL_EVENTS_TOPIC: 'message.special.events',
 } as const;

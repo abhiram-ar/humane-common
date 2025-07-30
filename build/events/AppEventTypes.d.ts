@@ -1,4 +1,6 @@
 export declare const AppEventsTypes: {
+    readonly NEW_MESSAGE: "message.created";
+    readonly FIRST_REPLY_WITHIN_24_HR: "replied.in.24hr.first";
     readonly USER_REWARDED: "user.rewarded";
     readonly POST_CREATED: "post.created";
     readonly POST_UPDATED: "post.updated";
