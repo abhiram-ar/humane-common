@@ -1,3 +1,4 @@
+import z from 'zod';
 import { RootAppEvent } from './eventSchema';
 
 export const WriterEventsTypes = {
@@ -35,6 +36,35 @@ export const PostAttachmentStatus = {
    ERROR: 'error',
 } as const;
 
+export const postSchema = z.object({
+   id: z.string(),
+   authorId: z.string(),
+   content: z.string().nonempty().max(256),
+   visibility: z.enum([PostVisibility.FRIENDS, PostVisibility.PUBLIC]),
+   hashtags: z.array(z.string()),
+
+   attachmentType: z.string().optional(),
+   attachmentStatus: z
+      .enum([
+         PostAttachmentStatus.READY,
+         PostAttachmentStatus.PROCESSING,
+         PostAttachmentStatus.ERROR,
+      ])
+      .optional(),
+   rawAttachmentKey: z.string().nullish().optional(),
+   processedAttachmentKey: z.string().nullish().optional(),
+
+   moderationStatus: z.enum([
+      ModerationStatus.PENDING,
+      ModerationStatus.OK,
+      ModerationStatus.NOT_APPROPRIATE,
+   ]),
+   moderationMetadata: z.any().nullish().optional(),
+
+   createdAt: z.coerce.date(),
+   updatedAt: z.coerce.date(),
+});
+
 export type PostEventPayload = {
    id: string;
    authorId: string;
@@ -53,6 +83,9 @@ export type PostEventPayload = {
    attachmentType: string;
    rawAttachmentKey: string | null;
 };
+
+const assertTypeCompatibility: <T extends z.infer<typeof postSchema>>() => void = () => {};
+assertTypeCompatibility<PostEventPayload>();
 
 export type PostCreatedEvent = RootAppEvent<
    typeof WriterEventsTypes.POST_CREATED,

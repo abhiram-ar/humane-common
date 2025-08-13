@@ -1,6 +1,10 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PostAttachmentStatus = exports.ModerationStatus = exports.PostVisibility = exports.WriterEventsTypes = void 0;
+exports.postSchema = exports.PostAttachmentStatus = exports.ModerationStatus = exports.PostVisibility = exports.WriterEventsTypes = void 0;
+const zod_1 = __importDefault(require("zod"));
 exports.WriterEventsTypes = {
     POST_CREATED: 'post.created',
     POST_UPDATED: 'post.updated',
@@ -28,3 +32,30 @@ exports.PostAttachmentStatus = {
     PROCESSING: 'processing',
     ERROR: 'error',
 };
+exports.postSchema = zod_1.default.object({
+    id: zod_1.default.string(),
+    authorId: zod_1.default.string(),
+    content: zod_1.default.string().nonempty().max(256),
+    visibility: zod_1.default.enum([exports.PostVisibility.FRIENDS, exports.PostVisibility.PUBLIC]),
+    hashtags: zod_1.default.array(zod_1.default.string()),
+    attachmentType: zod_1.default.string().optional(),
+    attachmentStatus: zod_1.default
+        .enum([
+        exports.PostAttachmentStatus.READY,
+        exports.PostAttachmentStatus.PROCESSING,
+        exports.PostAttachmentStatus.ERROR,
+    ])
+        .optional(),
+    rawAttachmentKey: zod_1.default.string().nullish().optional(),
+    processedAttachmentKey: zod_1.default.string().nullish().optional(),
+    moderationStatus: zod_1.default.enum([
+        exports.ModerationStatus.PENDING,
+        exports.ModerationStatus.OK,
+        exports.ModerationStatus.NOT_APPROPRIATE,
+    ]),
+    moderationMetadata: zod_1.default.any().nullish().optional(),
+    createdAt: zod_1.default.coerce.date(),
+    updatedAt: zod_1.default.coerce.date(),
+});
+const assertTypeCompatibility = () => { };
+assertTypeCompatibility();

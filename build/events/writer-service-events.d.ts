@@ -1,3 +1,4 @@
+import z from 'zod';
 import { RootAppEvent } from './eventSchema';
 export declare const WriterEventsTypes: {
     readonly POST_CREATED: "post.created";
@@ -25,6 +26,49 @@ export declare const PostAttachmentStatus: {
     readonly PROCESSING: "processing";
     readonly ERROR: "error";
 };
+export declare const postSchema: z.ZodObject<{
+    id: z.ZodString;
+    authorId: z.ZodString;
+    content: z.ZodString;
+    visibility: z.ZodEnum<["friends", "public"]>;
+    hashtags: z.ZodArray<z.ZodString, "many">;
+    attachmentType: z.ZodOptional<z.ZodString>;
+    attachmentStatus: z.ZodOptional<z.ZodEnum<["ready", "processing", "error"]>>;
+    rawAttachmentKey: z.ZodOptional<z.ZodOptional<z.ZodNullable<z.ZodString>>>;
+    processedAttachmentKey: z.ZodOptional<z.ZodOptional<z.ZodNullable<z.ZodString>>>;
+    moderationStatus: z.ZodEnum<["pending", "ok", "notAppropriate"]>;
+    moderationMetadata: z.ZodOptional<z.ZodOptional<z.ZodNullable<z.ZodAny>>>;
+    createdAt: z.ZodDate;
+    updatedAt: z.ZodDate;
+}, "strip", z.ZodTypeAny, {
+    id: string;
+    authorId: string;
+    content: string;
+    visibility: "public" | "friends";
+    hashtags: string[];
+    moderationStatus: "pending" | "ok" | "notAppropriate";
+    createdAt: Date;
+    updatedAt: Date;
+    attachmentType?: string | undefined;
+    attachmentStatus?: "ready" | "processing" | "error" | undefined;
+    rawAttachmentKey?: string | null | undefined;
+    processedAttachmentKey?: string | null | undefined;
+    moderationMetadata?: any;
+}, {
+    id: string;
+    authorId: string;
+    content: string;
+    visibility: "public" | "friends";
+    hashtags: string[];
+    moderationStatus: "pending" | "ok" | "notAppropriate";
+    createdAt: Date;
+    updatedAt: Date;
+    attachmentType?: string | undefined;
+    attachmentStatus?: "ready" | "processing" | "error" | undefined;
+    rawAttachmentKey?: string | null | undefined;
+    processedAttachmentKey?: string | null | undefined;
+    moderationMetadata?: any;
+}>;
 export type PostEventPayload = {
     id: string;
     authorId: string;
