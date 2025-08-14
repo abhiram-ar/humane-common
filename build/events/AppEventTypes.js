@@ -2,7 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppEventsTypes = void 0;
 const chat_service_events_1 = require("./chat-service-events");
+const moderation_service_events_1 = require("./moderation-service-events");
 const reward_service_events_1 = require("./reward-service-events");
 const user_service_events_1 = require("./user-service.events");
 const writer_service_events_1 = require("./writer-service-events");
-exports.AppEventsTypes = Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({}, user_service_events_1.UserEventsTypes), user_service_events_1.FriendshipEventsTypes), writer_service_events_1.WriterEventsTypes), reward_service_events_1.RewardEventsTypes), chat_service_events_1.ChatEventTypes);
+exports.AppEventsTypes = Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({}, user_service_events_1.UserEventsTypes), user_service_events_1.FriendshipEventsTypes), writer_service_events_1.WriterEventsTypes), reward_service_events_1.RewardEventsTypes), chat_service_events_1.ChatEventTypes), moderation_service_events_1.ModerationEventTypes);

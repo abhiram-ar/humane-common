@@ -13,7 +13,7 @@ export declare const MessageBrokerTopics: {
     readonly COMMENT_LIKED_EVENT_TOPIC: "comment.liked.events";
     readonly COMMENT_UNLIKED_EVENT_TOPIC: "comment.unliked.events";
     readonly COMMENT_LIKED_BY_POST_AUTHOR_TOPIC: "comment.liked.by.post.author.events";
-    readonly MODERATION_COMPLETE_POST: "post.moderation.complete.events";
+    readonly CONTENT_MODERATION_EVENT_TOPIC: "moderation.events";
     readonly REWARD_EVENTS_TOPIC: "reward.events";
     readonly MESSAGE_EVENTS_TOPIC: "message.events";
     readonly MESSAGE_SPECAIAL_EVENTS_TOPIC: "message.special.events";

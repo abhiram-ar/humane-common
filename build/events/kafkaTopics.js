@@ -16,7 +16,7 @@ exports.MessageBrokerTopics = {
     COMMENT_LIKED_EVENT_TOPIC: 'comment.liked.events',
     COMMENT_UNLIKED_EVENT_TOPIC: 'comment.unliked.events',
     COMMENT_LIKED_BY_POST_AUTHOR_TOPIC: 'comment.liked.by.post.author.events',
-    MODERATION_COMPLETE_POST: 'post.moderation.complete.events',
+    CONTENT_MODERATION_EVENT_TOPIC: 'moderation.events',
     REWARD_EVENTS_TOPIC: 'reward.events',
     MESSAGE_EVENTS_TOPIC: 'message.events',
     MESSAGE_SPECAIAL_EVENTS_TOPIC: 'message.special.events',
