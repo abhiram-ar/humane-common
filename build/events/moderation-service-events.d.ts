@@ -17,7 +17,7 @@ declare const PredictionSchema: z.ZodObject<{
 }>;
 declare const PostModeratedPayloadSchema: z.ZodObject<{
     postId: z.ZodString;
-    result: z.ZodOptional<z.ZodDiscriminatedUnion<"success", [z.ZodObject<{
+    result: z.ZodDiscriminatedUnion<"success", [z.ZodObject<{
         success: z.ZodLiteral<false>;
     }, "strip", z.ZodTypeAny, {
         success: false;
@@ -25,7 +25,7 @@ declare const PostModeratedPayloadSchema: z.ZodObject<{
         success: false;
     }>, z.ZodObject<{
         success: z.ZodLiteral<true>;
-        moderdationData: z.ZodDiscriminatedUnion<"type", [z.ZodObject<{
+        moderdationData: z.ZodOptional<z.ZodDiscriminatedUnion<"type", [z.ZodObject<{
             type: z.ZodLiteral<"singleFrame">;
             result: z.ZodArray<z.ZodObject<{
                 className: z.ZodString;
@@ -120,11 +120,12 @@ declare const PostModeratedPayloadSchema: z.ZodObject<{
                 }[][];
                 totalFrames: number;
             };
-        }>]>;
+        }>]>>;
         flagged: z.ZodBoolean;
     }, "strip", z.ZodTypeAny, {
         success: true;
-        moderdationData: {
+        flagged: boolean;
+        moderdationData?: {
             type: "singleFrame";
             result: {
                 className: string;
@@ -143,11 +144,11 @@ declare const PostModeratedPayloadSchema: z.ZodObject<{
                 }[][];
                 totalFrames: number;
             };
-        };
-        flagged: boolean;
+        } | undefined;
     }, {
         success: true;
-        moderdationData: {
+        flagged: boolean;
+        moderdationData?: {
             type: "singleFrame";
             result: {
                 className: string;
@@ -166,16 +167,16 @@ declare const PostModeratedPayloadSchema: z.ZodObject<{
                 }[][];
                 totalFrames: number;
             };
-        };
-        flagged: boolean;
-    }>]>>;
+        } | undefined;
+    }>]>;
 }, "strip", z.ZodTypeAny, {
     postId: string;
-    result?: {
+    result: {
         success: false;
     } | {
         success: true;
-        moderdationData: {
+        flagged: boolean;
+        moderdationData?: {
             type: "singleFrame";
             result: {
                 className: string;
@@ -194,16 +195,16 @@ declare const PostModeratedPayloadSchema: z.ZodObject<{
                 }[][];
                 totalFrames: number;
             };
-        };
-        flagged: boolean;
-    } | undefined;
+        } | undefined;
+    };
 }, {
     postId: string;
-    result?: {
+    result: {
         success: false;
     } | {
         success: true;
-        moderdationData: {
+        flagged: boolean;
+        moderdationData?: {
             type: "singleFrame";
             result: {
                 className: string;
@@ -222,9 +223,8 @@ declare const PostModeratedPayloadSchema: z.ZodObject<{
                 }[][];
                 totalFrames: number;
             };
-        };
-        flagged: boolean;
-    } | undefined;
+        } | undefined;
+    };
 }>;
 export type Prediction = z.infer<typeof PredictionSchema>;
 export type PostModeratedPayload = z.infer<typeof PostModeratedPayloadSchema>;

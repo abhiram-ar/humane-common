@@ -16,14 +16,14 @@ const PredictionSchema = zod_1.default.object({
 });
 const PostModeratedPayloadSchema = zod_1.default.object({
     postId: zod_1.default.string(),
-    result: zod_1.default
-        .discriminatedUnion('success', [
+    result: zod_1.default.discriminatedUnion('success', [
         zod_1.default.object({
             success: zod_1.default.literal(false),
         }),
         zod_1.default.object({
             success: zod_1.default.literal(true),
-            moderdationData: zod_1.default.discriminatedUnion('type', [
+            moderdationData: zod_1.default
+                .discriminatedUnion('type', [
                 zod_1.default.object({
                     type: zod_1.default.literal('singleFrame'),
                     result: zod_1.default.array(PredictionSchema),
@@ -36,9 +36,9 @@ const PostModeratedPayloadSchema = zod_1.default.object({
                         totalFrames: zod_1.default.number(),
                     }),
                 }),
-            ]),
+            ])
+                .optional(),
             flagged: zod_1.default.boolean(),
         }),
-    ])
-        .optional(),
+    ]),
 });

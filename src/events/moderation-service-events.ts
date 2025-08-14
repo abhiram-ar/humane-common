@@ -15,14 +15,14 @@ const PredictionSchema = z.object({
 
 const PostModeratedPayloadSchema = z.object({
    postId: z.string(),
-   result: z
-      .discriminatedUnion('success', [
-         z.object({
-            success: z.literal(false),
-         }),
-         z.object({
-            success: z.literal(true),
-            moderdationData: z.discriminatedUnion('type', [
+   result: z.discriminatedUnion('success', [
+      z.object({
+         success: z.literal(false),
+      }),
+      z.object({
+         success: z.literal(true),
+         moderdationData: z
+            .discriminatedUnion('type', [
                z.object({
                   type: z.literal('singleFrame'),
                   result: z.array(PredictionSchema),
@@ -35,11 +35,11 @@ const PostModeratedPayloadSchema = z.object({
                      totalFrames: z.number(),
                   }),
                }),
-            ]),
-            flagged: z.boolean(),
-         }),
-      ])
-      .optional(),
+            ])
+            .optional(),
+         flagged: z.boolean(),
+      }),
+   ]),
 });
 
 export type Prediction = z.infer<typeof PredictionSchema>;
