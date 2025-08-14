@@ -7,6 +7,7 @@ exports.ModerationEventTypes = void 0;
 const zod_1 = __importDefault(require("zod"));
 exports.ModerationEventTypes = {
     POST_MODERATED: 'post.moderated',
+    POST_CREATED_MODERATION_RETRY: 'post.created.moderation.retry',
 };
 // ------------------eventss-------------------------
 const PredictionSchema = zod_1.default.object({

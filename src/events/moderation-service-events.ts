@@ -1,10 +1,11 @@
 import z from 'zod';
 import { RootAppEvent } from './eventSchema';
+import { PostEventPayload, postSchema } from './writer-service-events';
 
 export const ModerationEventTypes = {
    POST_MODERATED: 'post.moderated',
+   POST_CREATED_MODERATION_RETRY: 'post.created.moderation.retry',
 } as const;
-
 
 // ------------------eventss-------------------------
 const PredictionSchema = z.object({
@@ -47,4 +48,12 @@ export type PostModeratedEvent = RootAppEvent<
    PostModeratedPayload
 >;
 
-export type ModerationServiceEvents = PostModeratedEvent;
+// -----------------------------------------------
+type PostCreatedModerationRetyEventPayload = PostEventPayload;
+
+export type PostCreatedModerationRetyEvent = RootAppEvent<
+   typeof ModerationEventTypes.POST_CREATED_MODERATION_RETRY,
+   PostCreatedModerationRetyEventPayload
+>;
+
+export type ModerationServiceEvents = PostModeratedEvent | PostCreatedModerationRetyEvent;

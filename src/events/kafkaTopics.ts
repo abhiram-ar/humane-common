@@ -19,6 +19,7 @@ export const MessageBrokerTopics = {
    COMMENT_LIKED_BY_POST_AUTHOR_TOPIC: 'comment.liked.by.post.author.events',
 
    CONTENT_MODERATION_EVENT_TOPIC: 'moderation.events',
+   CONTENT_MODERATION_REREY_EVENT_TOPIC: 'moderation.retry.events',
 
    REWARD_EVENTS_TOPIC: 'reward.events',
 
