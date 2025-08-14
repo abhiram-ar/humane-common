@@ -17,7 +17,7 @@ declare const PredictionSchema: z.ZodObject<{
 }>;
 declare const PostModeratedPayloadSchema: z.ZodObject<{
     postId: z.ZodString;
-    result: z.ZodDiscriminatedUnion<"success", [z.ZodObject<{
+    result: z.ZodOptional<z.ZodDiscriminatedUnion<"success", [z.ZodObject<{
         success: z.ZodLiteral<false>;
     }, "strip", z.ZodTypeAny, {
         success: false;
@@ -168,10 +168,10 @@ declare const PostModeratedPayloadSchema: z.ZodObject<{
             };
         };
         flagged: boolean;
-    }>]>;
+    }>]>>;
 }, "strip", z.ZodTypeAny, {
     postId: string;
-    result: {
+    result?: {
         success: false;
     } | {
         success: true;
@@ -196,10 +196,10 @@ declare const PostModeratedPayloadSchema: z.ZodObject<{
             };
         };
         flagged: boolean;
-    };
+    } | undefined;
 }, {
     postId: string;
-    result: {
+    result?: {
         success: false;
     } | {
         success: true;
@@ -224,7 +224,7 @@ declare const PostModeratedPayloadSchema: z.ZodObject<{
             };
         };
         flagged: boolean;
-    };
+    } | undefined;
 }>;
 export type Prediction = z.infer<typeof PredictionSchema>;
 export type PostModeratedPayload = z.infer<typeof PostModeratedPayloadSchema>;

@@ -16,7 +16,8 @@ const PredictionSchema = zod_1.default.object({
 });
 const PostModeratedPayloadSchema = zod_1.default.object({
     postId: zod_1.default.string(),
-    result: zod_1.default.discriminatedUnion('success', [
+    result: zod_1.default
+        .discriminatedUnion('success', [
         zod_1.default.object({
             success: zod_1.default.literal(false),
         }),
@@ -38,5 +39,6 @@ const PostModeratedPayloadSchema = zod_1.default.object({
             ]),
             flagged: zod_1.default.boolean(),
         }),
-    ]),
+    ])
+        .optional(),
 });
