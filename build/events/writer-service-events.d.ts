@@ -20,6 +20,7 @@ export declare const ModerationStatus: {
     readonly PENDING: "pending";
     readonly OK: "ok";
     readonly NOT_APPROPRIATE: "notAppropriate";
+    readonly FAILED: "failed";
 };
 export declare const PostAttachmentStatus: {
     readonly READY: "ready";
@@ -36,7 +37,7 @@ export declare const postSchema: z.ZodObject<{
     attachmentStatus: z.ZodOptional<z.ZodEnum<["ready", "processing", "error"]>>;
     rawAttachmentKey: z.ZodOptional<z.ZodOptional<z.ZodNullable<z.ZodString>>>;
     processedAttachmentKey: z.ZodOptional<z.ZodOptional<z.ZodNullable<z.ZodString>>>;
-    moderationStatus: z.ZodEnum<["pending", "ok", "notAppropriate"]>;
+    moderationStatus: z.ZodEnum<["pending", "ok", "notAppropriate", "failed"]>;
     moderationMetadata: z.ZodOptional<z.ZodOptional<z.ZodNullable<z.ZodAny>>>;
     createdAt: z.ZodDate;
     updatedAt: z.ZodDate;
@@ -46,7 +47,7 @@ export declare const postSchema: z.ZodObject<{
     content: string;
     visibility: "public" | "friends";
     hashtags: string[];
-    moderationStatus: "pending" | "ok" | "notAppropriate";
+    moderationStatus: "pending" | "ok" | "notAppropriate" | "failed";
     createdAt: Date;
     updatedAt: Date;
     attachmentType?: string | undefined;
@@ -60,7 +61,7 @@ export declare const postSchema: z.ZodObject<{
     content: string;
     visibility: "public" | "friends";
     hashtags: string[];
-    moderationStatus: "pending" | "ok" | "notAppropriate";
+    moderationStatus: "pending" | "ok" | "notAppropriate" | "failed";
     createdAt: Date;
     updatedAt: Date;
     attachmentType?: string | undefined;

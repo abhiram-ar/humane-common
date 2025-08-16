@@ -26,6 +26,7 @@ exports.ModerationStatus = {
     PENDING: 'pending',
     OK: 'ok',
     NOT_APPROPRIATE: 'notAppropriate',
+    FAILED: 'failed',
 };
 exports.PostAttachmentStatus = {
     READY: 'ready',
@@ -52,6 +53,7 @@ exports.postSchema = zod_1.default.object({
         exports.ModerationStatus.PENDING,
         exports.ModerationStatus.OK,
         exports.ModerationStatus.NOT_APPROPRIATE,
+        exports.ModerationStatus.FAILED,
     ]),
     moderationMetadata: zod_1.default.any().nullish().optional(),
     createdAt: zod_1.default.coerce.date(),

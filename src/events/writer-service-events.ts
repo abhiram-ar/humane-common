@@ -28,6 +28,7 @@ export const ModerationStatus = {
    PENDING: 'pending',
    OK: 'ok',
    NOT_APPROPRIATE: 'notAppropriate',
+   FAILED: 'failed',
 } as const;
 
 export const PostAttachmentStatus = {
@@ -58,6 +59,7 @@ export const postSchema = z.object({
       ModerationStatus.PENDING,
       ModerationStatus.OK,
       ModerationStatus.NOT_APPROPRIATE,
+      ModerationStatus.FAILED,
    ]),
    moderationMetadata: z.any().nullish().optional(),
 
