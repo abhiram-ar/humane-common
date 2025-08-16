@@ -5,6 +5,7 @@ export const WriterEventsTypes = {
    POST_CREATED: 'post.created',
    POST_UPDATED: 'post.updated',
    POST_DELETED: 'post.deleted',
+   POST_MODERATION_COMPLETED: 'post.moderation.completed',
 
    COMMENT_CREATED: 'comment.created',
    COMMENT_DELTED: 'comment.deleted',
@@ -104,6 +105,11 @@ export type PostUpdatedEvent = RootAppEvent<
    PostEventPayload
 >;
 
+export type PostModerationCompletedEvent = RootAppEvent<
+   typeof WriterEventsTypes.POST_MODERATION_COMPLETED,
+   PostEventPayload
+>;
+
 // ---------------------comment events-------------------
 export type CommentEventPayload = {
    id: string;
@@ -175,6 +181,7 @@ export type WriterServiceEvents =
    | PostCreatedEvent
    | PostDeletedEvent
    | PostUpdatedEvent
+   | PostModerationCompletedEvent
    | CommentCreatedEvent
    | CommentDeletedEvent
    | AddCommentLikeRequestEvent

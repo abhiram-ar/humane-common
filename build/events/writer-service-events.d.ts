@@ -4,6 +4,7 @@ export declare const WriterEventsTypes: {
     readonly POST_CREATED: "post.created";
     readonly POST_UPDATED: "post.updated";
     readonly POST_DELETED: "post.deleted";
+    readonly POST_MODERATION_COMPLETED: "post.moderation.completed";
     readonly COMMENT_CREATED: "comment.created";
     readonly COMMENT_DELTED: "comment.deleted";
     readonly ADD_COMMENT_LIKE_REQUESTED: "comment.like.requested";
@@ -88,6 +89,7 @@ export type PostEventPayload = {
 export type PostCreatedEvent = RootAppEvent<typeof WriterEventsTypes.POST_CREATED, PostEventPayload>;
 export type PostDeletedEvent = RootAppEvent<typeof WriterEventsTypes.POST_DELETED, PostEventPayload>;
 export type PostUpdatedEvent = RootAppEvent<typeof WriterEventsTypes.POST_UPDATED, PostEventPayload>;
+export type PostModerationCompletedEvent = RootAppEvent<typeof WriterEventsTypes.POST_MODERATION_COMPLETED, PostEventPayload>;
 export type CommentEventPayload = {
     id: string;
     authorId: string;
@@ -119,4 +121,4 @@ export type CommentLikedByPostAuthorPayload = {
     postAuthorId: string;
 };
 export type CommnetLikedByPostAuthorEvent = RootAppEvent<typeof WriterEventsTypes.COMMENT_LIKED_BY_POST_AUTHUR, CommentLikedByPostAuthorPayload>;
-export type WriterServiceEvents = PostCreatedEvent | PostDeletedEvent | PostUpdatedEvent | CommentCreatedEvent | CommentDeletedEvent | AddCommentLikeRequestEvent | CommentUnlikeRequestEvent | CommnetLikedEvent | CommentUnlikedEvent | CommnetLikedByPostAuthorEvent;
+export type WriterServiceEvents = PostCreatedEvent | PostDeletedEvent | PostUpdatedEvent | PostModerationCompletedEvent | CommentCreatedEvent | CommentDeletedEvent | AddCommentLikeRequestEvent | CommentUnlikeRequestEvent | CommnetLikedEvent | CommentUnlikedEvent | CommnetLikedByPostAuthorEvent;

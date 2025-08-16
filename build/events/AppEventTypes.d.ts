@@ -7,6 +7,7 @@ export declare const AppEventsTypes: {
     readonly POST_CREATED: "post.created";
     readonly POST_UPDATED: "post.updated";
     readonly POST_DELETED: "post.deleted";
+    readonly POST_MODERATION_COMPLETED: "post.moderation.completed";
     readonly COMMENT_CREATED: "comment.created";
     readonly COMMENT_DELTED: "comment.deleted";
     readonly ADD_COMMENT_LIKE_REQUESTED: "comment.like.requested";

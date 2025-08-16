@@ -9,6 +9,7 @@ exports.WriterEventsTypes = {
     POST_CREATED: 'post.created',
     POST_UPDATED: 'post.updated',
     POST_DELETED: 'post.deleted',
+    POST_MODERATION_COMPLETED: 'post.moderation.completed',
     COMMENT_CREATED: 'comment.created',
     COMMENT_DELTED: 'comment.deleted',
     ADD_COMMENT_LIKE_REQUESTED: 'comment.like.requested',
