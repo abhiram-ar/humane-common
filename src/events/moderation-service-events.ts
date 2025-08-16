@@ -1,6 +1,6 @@
 import z from 'zod';
 import { RootAppEvent } from './eventSchema';
-import { PostEventPayload, postSchema } from './writer-service-events';
+import { PostEventPayload } from './writer-service-events';
 
 export const ModerationEventTypes = {
    POST_MODERATED: 'post.moderated',
