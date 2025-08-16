@@ -5,7 +5,7 @@ export declare const ModerationEventTypes: {
     readonly POST_MODERATED: "post.moderated";
     readonly POST_CREATED_MODERATION_RETRY: "post.created.moderation.retry";
 };
-declare const PredictionSchema: z.ZodObject<{
+export declare const PredictionSchema: z.ZodObject<{
     className: z.ZodString;
     probability: z.ZodNumber;
 }, "strip", z.ZodTypeAny, {
@@ -15,7 +15,7 @@ declare const PredictionSchema: z.ZodObject<{
     className: string;
     probability: number;
 }>;
-declare const PostModeratedPayloadSchema: z.ZodObject<{
+export declare const PostModeratedPayloadSchema: z.ZodObject<{
     postId: z.ZodString;
     result: z.ZodDiscriminatedUnion<"success", [z.ZodObject<{
         success: z.ZodLiteral<false>;

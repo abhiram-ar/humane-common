@@ -8,12 +8,12 @@ export const ModerationEventTypes = {
 } as const;
 
 // ------------------eventss-------------------------
-const PredictionSchema = z.object({
+export const PredictionSchema = z.object({
    className: z.string(),
    probability: z.number(),
 });
 
-const PostModeratedPayloadSchema = z.object({
+export const PostModeratedPayloadSchema = z.object({
    postId: z.string(),
    result: z.discriminatedUnion('success', [
       z.object({
