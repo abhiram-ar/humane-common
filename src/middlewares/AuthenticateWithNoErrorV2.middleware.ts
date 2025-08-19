@@ -1,6 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
 import { JWTTokenPaylod } from '../Types/JWTTokenPayload.type';
-import { verifyAccessToken } from '../utils/jwt/config';
 import JWT from 'jsonwebtoken';
 
 declare global {
