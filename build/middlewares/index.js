@@ -18,3 +18,5 @@ __exportStar(require("./authorization.middleware"), exports);
 __exportStar(require("./error.middeware"), exports);
 __exportStar(require("./isAuthenticated.middleware"), exports);
 __exportStar(require("./AuthenticateWithNoError.middleware"), exports);
+__exportStar(require("./isAuthenticatedV2.middleware"), exports);
+__exportStar(require("./AuthenticateWithNoErrorV2.middleware"), exports);

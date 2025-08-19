@@ -7,4 +7,4 @@ declare global {
         }
     }
 }
-export declare const AuthenticateWithNoError: (req: Request, res: Response, next: NextFunction) => void;
+export declare const AuthenticateWithNoErrorV2: (req: Request, res: Response, next: NextFunction) => void;

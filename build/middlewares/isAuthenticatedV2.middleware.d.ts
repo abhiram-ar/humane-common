@@ -7,4 +7,4 @@ declare global {
         }
     }
 }
-export declare const isAuthenticated: (req: Request, res: Response, next: NextFunction) => void;
+export declare const isAuthenticatedV2: (req: Request, res: Response, next: NextFunction) => void;

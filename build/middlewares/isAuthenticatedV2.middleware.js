@@ -3,10 +3,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.isAuthenticated = void 0;
+exports.isAuthenticatedV2 = void 0;
 const errors_1 = require("../errors");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
-const isAuthenticated = (req, res, next) => {
+const isAuthenticatedV2 = (req, res, next) => {
     const authHeader = req.headers.authorization;
     if (!authHeader) {
         throw new errors_1.UnAuthenticatedError('No authorization data in request header');
@@ -24,4 +24,4 @@ const isAuthenticated = (req, res, next) => {
     }
     throw new errors_1.UnAuthenticatedError('Something wrong with authentication');
 };
-exports.isAuthenticated = isAuthenticated;
+exports.isAuthenticatedV2 = isAuthenticatedV2;

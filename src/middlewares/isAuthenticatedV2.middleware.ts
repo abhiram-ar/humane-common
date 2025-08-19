@@ -11,7 +11,7 @@ declare global {
    }
 }
 
-export const isAuthenticated = (req: Request, res: Response, next: NextFunction) => {
+export const isAuthenticatedV2 = (req: Request, res: Response, next: NextFunction) => {
    const authHeader = req.headers.authorization;
    if (!authHeader) {
       throw new UnAuthenticatedError('No authorization data in request header');

@@ -11,7 +11,7 @@ declare global {
    }
 }
 
-export const AuthenticateWithNoError = (req: Request, res: Response, next: NextFunction) => {
+export const AuthenticateWithNoErrorV2 = (req: Request, res: Response, next: NextFunction) => {
    const authHeader = req.headers.authorization;
    if (!authHeader) {
       return next();
@@ -21,6 +21,7 @@ export const AuthenticateWithNoError = (req: Request, res: Response, next: NextF
    if (!token) {
       return next();
    }
+
    try {
       const payload = JWT.decode(token) as JWTTokenPaylod;
       if (payload.type === 'user' || payload.type === 'admin') {
