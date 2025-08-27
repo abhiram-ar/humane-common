@@ -25,7 +25,7 @@ export class UnifiedPrometheusMetricsMonitoring {
       const endTimer = this.httpRequestDuration.startTimer();
 
       res.on('finish', () => {
-         const route = req.route?.path || req.path;
+         const route = req.path; // issue with req.route?.path -> this gives the matched route handler path
          const statusCode = res.statusCode.toString();
 
          endTimer({

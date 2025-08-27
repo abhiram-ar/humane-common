@@ -7,8 +7,7 @@ class UnifiedPrometheusMetricsMonitoring {
         this.metricsMiddleware = (req, res, next) => {
             const endTimer = this.httpRequestDuration.startTimer();
             res.on('finish', () => {
-                var _a;
-                const route = ((_a = req.route) === null || _a === void 0 ? void 0 : _a.path) || req.path;
+                const route = req.path; // issue with req.route?.path -> this gives the matched route handler path
                 const statusCode = res.statusCode.toString();
                 endTimer({
                     method: req.method,
