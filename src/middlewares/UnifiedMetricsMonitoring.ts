@@ -23,9 +23,9 @@ export class UnifiedPrometheusMetricsMonitoring {
 
    metricsMiddleware = (req: Request, res: Response, next: NextFunction): void => {
       const endTimer = this.httpRequestDuration.startTimer();
+      const route = req.path; // issue with req.route?.path -> this gives the matched route handler path
 
       res.on('finish', () => {
-         const route = req.path; // issue with req.route?.path -> this gives the matched route handler path
          const statusCode = res.statusCode.toString();
 
          endTimer({
